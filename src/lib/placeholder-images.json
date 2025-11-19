@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-home",
+      "description": "A stunning mountain landscape at sunrise with a person looking out over the view.",
+      "imageUrl": "https://images.unsplash.com/photo-1612676239016-41e2c92b8e06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb3VudGFpbiUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3NjM1MTgzMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain landscape"
+    },
+    {
+      "id": "about-us",
+      "description": "A group of happy hikers celebrating on a mountain peak.",
+      "imageUrl": "https://images.unsplash.com/photo-1698905927245-1bccf179b169?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGhpa2Vyc3xlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy hikers"
+    },
+    {
+      "id": "transport-hero",
+      "description": "A modern and comfortable tour bus driving on a scenic road through mountains.",
+      "imageUrl": "https://images.unsplash.com/photo-1556704498-49037b3a4403?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0b3VyJTIwYnVzfGVufDB8fHx8MTc2MzU4MDQwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tour bus"
+    },
+    {
+      "id": "farm-school",
+      "description": "A child petting a small goat at a farm school.",
+      "imageUrl": "https://images.unsplash.com/photo-1629702858998-ceaf1513cb45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZCUyMHBldHRpbmclMjBnb2F0fGVufDB8fHx8MTc2MzU4MDQwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child petting goat"
+    },
+    {
+      "id": "canyoning-adventure",
+      "description": "A person in a wetsuit and helmet jumping into a crystal clear pool of water in a canyon.",
+      "imageUrl": "https://images.unsplash.com/photo-1721338752673-91b7603f2ae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW55b25pbmclMjBhZHZlbnR1cmV8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "canyoning adventure"
+    },
+    {
+      "id": "food-tour-singles",
+      "description": "A group of young adults laughing and sharing tapas at an outdoor market.",
+      "imageUrl": "https://images.unsplash.com/photo-1748282639768-e74e17bd729d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzaGFyaW5nJTIwdGFwYXN8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sharing tapas"
+    },
+    {
+      "id": "accessible-trail",
+      "description": "A person in an all-terrain wheelchair (Joelette) on a scenic nature trail, guided by two helpers.",
+      "imageUrl": "https://images.unsplash.com/photo-1643902265349-214b862c6265?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhbGwtdGVycmFpbiUyMHdoZWVsY2hhaXJ8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "all-terrain wheelchair"
+    },
+    {
+      "id": "singles-boat-party",
+      "description": "A lively party on the deck of a boat at sunset.",
+      "imageUrl": "https://images.unsplash.com/photo-1501426026826-31c667bdf23d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxib2F0JTIwcGFydHl8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "boat party"
+    },
+    {
+      "id": "whale-watching",
+      "description": "A dolphin leaping out of the water near a tour boat.",
+      "imageUrl": "https://images.unsplash.com/photo-1629224701353-0822d6497867?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2xwaGluJTIwbGVhcGluZ3xlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dolphin leaping"
+    },
+    {
+      "id": "wine-tasting",
+      "description": "Close-up of a wine glass being swirled during a tasting in a modern, accessible winery.",
+      "imageUrl": "https://images.unsplash.com/photo-1625922379195-3f891e47eaee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3aW5lJTIwdGFzdGluZ3xlbnwwfHx8fDE3NjM0ODQ5NDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wine tasting"
+    },
+    {
+      "id": "pirate-treasure-hunt",
+      "description": "Children dressed as pirates digging for treasure on a sandy beach.",
+      "imageUrl": "https://images.unsplash.com/photo-1732266496052-dd9246b72d8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGlsZHJlbiUyMHBpcmF0ZXN8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children pirates"
+    },
+    {
+      "id": "via-ferrata-sunrise",
+      "description": "A climber on a via ferrata route, silhouetted against a beautiful sunrise over mountains.",
+      "imageUrl": "https://images.unsplash.com/photo-1557070372-94b160a8dfc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2aWElMjBmZXJyYXRhJTIwc3VucmlzZXxlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "via ferrata sunrise"
+    },
+    {
+      "id": "horse-riding-park",
+      "description": "A person riding a horse on a path through a lush green forest.",
+      "imageUrl": "https://images.unsplash.com/photo-1532876075969-8c016daf9242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob3JzZSUyMHJpZGluZ3xlbnwwfHx8fDE3NjM1ODA0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "horse riding"
+    }
+  ]
 }
