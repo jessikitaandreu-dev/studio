@@ -47,7 +47,7 @@ export const excursions: Excursion[] = [
   },
   {
     slug: 'dia-granja-escuela',
-    title: 'Compartiendo con animales y actividades en la naturaleza en familia',
+    title: 'Disfrutando de los animales',
     category: 'family',
     categoryLabel: 'Familiares',
     isFeatured: true,
