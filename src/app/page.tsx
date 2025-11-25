@@ -11,6 +11,13 @@ import { ArrowRight } from 'lucide-react';
 export default function Home() {
   const featuredExcursions = getFeaturedExcursions();
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-home');
+  const categoryImages = {
+    accessible: PlaceHolderImages.find(p => p.id === 'accessible-trail'),
+    family: PlaceHolderImages.find(p => p.id === 'pirate-treasure-hunt'),
+    singles: PlaceHolderImages.find(p => p.id === 'singles-boat-party'),
+    'nature-adventure': PlaceHolderImages.find(p => p.id === 'canyoning-adventure'),
+    animals: PlaceHolderImages.find(p => p.id === 'hiking-with-dogs'),
+  }
 
   return (
     <div className="flex flex-col">
@@ -100,17 +107,28 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Explora por Categoría</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {excursionCategories.map((category) => (
+            {excursionCategories.map((category) => {
+              const image = categoryImages[category.id as keyof typeof categoryImages];
+              return (
               <Link href={`/excursions/${category.id}`} key={category.id} className="group">
-                <Card className="h-full overflow-hidden text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                  <CardContent className="p-6 flex flex-col items-center justify-center gap-4">
-                    <category.icon className="w-16 h-16 text-primary" />
-                    <CardTitle className="text-xl font-bold">{category.title}</CardTitle>
-                    <CardDescription>{category.description}</CardDescription>
+                <Card className="h-full overflow-hidden text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl relative">
+                   {image && (
+                    <Image
+                      src={image.imageUrl}
+                      alt={category.title}
+                      fill
+                      className="object-cover brightness-50 group-hover:brightness-75 transition-all"
+                      data-ai-hint={image.imageHint}
+                    />
+                  )}
+                  <CardContent className="p-6 flex flex-col items-center justify-center gap-4 h-full relative text-white">
+                    <category.icon className="w-16 h-16" />
+                    <CardTitle className="text-xl font-bold text-shadow-lg">{category.title}</CardTitle>
+                    <CardDescription className="text-white/90 text-shadow">{category.description}</CardDescription>
                   </CardContent>
                 </Card>
               </Link>
-            ))}
+            )})}
           </div>
         </div>
       </section>
