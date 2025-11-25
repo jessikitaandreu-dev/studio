@@ -28,8 +28,8 @@ export const excursionCategories = [
   },
   {
     id: 'animals' as ExcursionCategory,
-    title: 'Con Animales',
-    description: 'Conecta con la fauna local.',
+    title: 'Con Mascotas',
+    description: 'Aventuras junto a tu mejor amigo.',
     icon: Icons.Animals,
   },
 ];
@@ -81,7 +81,7 @@ export const excursions: Excursion[] = [
     slug: 'avistamiento-cetaceos-barco',
     title: 'Avistamiento de Cetáceos',
     category: 'animals',
-    categoryLabel: 'Con Animales',
+    categoryLabel: 'Con Mascotas',
     imageId: 'whale-watching',
     description: 'Embárcate en una expedición marina para observar delfines y ballenas en su hábitat natural, acompañado por biólogos marinos que compartirán su conocimiento.',
     itinerary: ['Salida desde el puerto.', 'Charla introductoria sobre la fauna marina local.', 'Navegación en busca de cetáceos.', 'Observación respetuosa de los animales.', 'Vuelta a puerto.'],
@@ -129,14 +129,15 @@ export const excursions: Excursion[] = [
     departureLocation: 'Parking del Refugio de Montaña',
   },
   {
-    slug: 'ruta-caballo-parque-natural',
-    title: 'Ruta a Caballo',
+    slug: 'senderismo-con-perros',
+    title: 'Senderismo con Perros',
     category: 'animals',
-    categoryLabel: 'Con Animales',
-    imageId: 'horse-riding-park',
-    description: 'Explora los senderos de un parque natural a lomos de un caballo. Una forma tranquila y diferente de conectar con la naturaleza.',
-    itinerary: ['Clase básica de equitación y asignación de caballos.', 'Inicio de la ruta guiada por el bosque.', 'Parada en un arroyo.', 'Regreso al centro ecuestre.'],
-    departureLocation: 'Centro Ecuestre "El Robledal"',
+    categoryLabel: 'Con Mascotas',
+    isFeatured: true,
+    imageId: 'hiking-with-dogs',
+    description: 'Disfruta de una increíble ruta de senderismo por la montaña junto a tu perro. Una experiencia para conectar con la naturaleza y con tu mejor amigo.',
+    itinerary: ['Punto de encuentro y bienvenida.', 'Inicio de la ruta de senderismo guiada.', 'Parada en un arroyo para que los perros se refresquen.', 'Picnic en la cima.', 'Regreso al punto de partida.'],
+    departureLocation: 'Parking del Parque Natural de la Sierra',
   }
 ];
 

@@ -21,7 +21,7 @@
     {
       "id": "farm-school",
       "description": "Children feeding sheep at a farm.",
-      "imageUrl": "https://images.unsplash.com/photo-1500879747858-bb1845b61beb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGZlZWRpbmclMjBzaGVlcHxlbnwwfHx8fDE3NjM4NDU1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1561948955-570b270e7c36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGZlZWRpbmclMjBzaGVlcHxlbnwwfHx8fDE3NjM4NDU1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "children feeding sheep"
     },
     {
@@ -39,7 +39,7 @@
     {
       "id": "accessible-trail",
       "description": "A person in an all-terrain wheelchair (Joelette) on a scenic nature trail, guided by two helpers.",
-      "imageUrl": "https://images.unsplash.com/photo-1643902265349-214b862c6265?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhbGwtdGVycmFpbiUyMHdoZWVsY2hhaXJ8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1643902265349-214b162c6265?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhbGwtdGVycmFpbiUyMHdoZWVsY2hhaXJ8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "all-terrain wheelchair"
     },
     {
@@ -73,10 +73,10 @@
       "imageHint": "via ferrata sunrise"
     },
     {
-      "id": "horse-riding-park",
-      "description": "A person riding a horse on a path through a lush green forest.",
-      "imageUrl": "https://images.unsplash.com/photo-1532876075969-8c016daf9242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob3JzZSUyMHJpZGluZ3xlbnwwfHx8fDE3NjM1ODA0MDh8MA&ixlib-rb-4.1.0&q=80&w=1080",
-      "imageHint": "horse riding"
+      "id": "hiking-with-dogs",
+      "description": "A group of people hiking with their dogs in the mountains.",
+      "imageUrl": "https://images.unsplash.com/photo-1588424981999-bd241f530c1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncm91cCUyMG9mJTIwcGVvcGxlJTIwaGlraW5nJTIwd2l0aCUyMGRvZ3N8ZW58MHx8fHwxNzYzODQ4NTMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "group hiking dogs"
     }
   ]
 }
