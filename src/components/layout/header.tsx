@@ -36,8 +36,8 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
             <Mountain className="h-8 w-8 text-primary" />
-            <span className={cn("text-2xl font-bold font-headline", isScrolled ? "text-foreground" : "text-white md:text-foreground")}>
-              RoamWild
+            <span className={cn("text-lg font-bold font-headline", isScrolled ? "text-foreground" : "text-white md:text-foreground")}>
+              Todos tenemos derecho a disfrutar
             </span>
           </Link>
 
@@ -75,8 +75,8 @@ export function Header() {
                     <div className="flex justify-between items-center mb-8">
                         <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                             <Mountain className="h-8 w-8 text-primary" />
-                            <span className="text-2xl font-bold font-headline text-foreground">
-                                RoamWild
+                            <span className="text-lg font-bold font-headline text-foreground">
+                                Todos tenemos derecho a disfrutar
                             </span>
                         </Link>
                         <SheetTrigger asChild>

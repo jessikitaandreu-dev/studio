@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Servicios de Transporte',
-  description: 'Ofrecemos servicios de transporte discrecional para grupos, eventos y traslados. Viaja con comodidad y seguridad con RoamWild Adventures.',
+  description: 'Ofrecemos servicios de transporte discrecional para grupos, eventos y traslados. Viaja con comodidad y seguridad con Todos tenemos derecho a disfrutar.',
 };
 
 const services = [
@@ -64,7 +64,7 @@ export default function TransportPage() {
           <div className="text-center max-w-3xl mx-auto">
              <h2 className="text-3xl md:text-4xl font-bold">Viaja con Confianza y Comodidad</h2>
              <p className="mt-4 text-muted-foreground font-body text-lg">
-                En RoamWild Adventures, no solo te llevamos de excursión, también ofrecemos un servicio de transporte discrecional de primera clase. Ya sea para un evento corporativo, una boda, un traslado al aeropuerto o cualquier viaje en grupo, nuestra flota está a tu disposición.
+                En Todos tenemos derecho a disfrutar, no solo te llevamos de excursión, también ofrecemos un servicio de transporte discrecional de primera clase. Ya sea para un evento corporativo, una boda, un traslado al aeropuerto o cualquier viaje en grupo, nuestra flota está a tu disposición.
              </p>
           </div>
 

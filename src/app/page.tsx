@@ -30,7 +30,7 @@ export default function Home() {
             Tu Aventura Comienza Aquí
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto font-body animate-fade-in-up animation-delay-300">
-            Explora destinos increíbles con RoamWild Adventures. Excursiones únicas diseñadas para cada tipo de aventurero.
+            Explora destinos increíbles con Todos tenemos derecho a disfrutar. Excursiones únicas diseñadas para cada tipo de aventurero.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-600">
             <Button asChild size="lg" className="font-bold">
@@ -71,9 +71,9 @@ export default function Home() {
       <section id="about" className="py-16 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="prose prose-lg max-w-none text-secondary-foreground font-body">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre RoamWild Adventures</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Todos tenemos derecho a disfrutar</h2>
             <p className="lead">
-              Nacimos de la pasión por descubrir el mundo y conectar con la naturaleza. En RoamWild Adventures, creemos que cada viaje es una oportunidad para crear recuerdos imborrables.
+              Nacimos de la pasión por descubrir el mundo y conectar con la naturaleza. En Todos tenemos derecho a disfrutar, creemos que cada viaje es una oportunidad para crear recuerdos imborrables.
             </p>
             <p>
               Nuestra misión es ofrecer experiencias auténticas y emocionantes, adaptadas a todos los espíritus aventureros. Desde tranquilas escapadas familiares hasta desafíos llenos de adrenalina, contamos con un equipo de guías expertos y comprometidos con la seguridad y la sostenibilidad.
@@ -86,7 +86,7 @@ export default function Home() {
             {PlaceHolderImages.find(p => p.id === 'about-us') && (
               <Image
                 src={PlaceHolderImages.find(p => p.id === 'about-us')!.imageUrl}
-                alt="Equipo de RoamWild Adventures"
+                alt="Equipo de Todos tenemos derecho a disfrutar"
                 fill
                 className="object-cover"
                 data-ai-hint={PlaceHolderImages.find(p => p.id === 'about-us')!.imageHint}

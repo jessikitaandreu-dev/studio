@@ -7,10 +7,10 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: {
-    default: 'RoamWild Adventures',
-    template: '%s | RoamWild Adventures',
+    default: 'Todos tenemos derecho a disfrutar',
+    template: '%s | Todos tenemos derecho a disfrutar',
   },
-  description: 'Aventuras y excursiones inolvidables para todos. ¡Descubre tu próximo destino con RoamWild Adventures!',
+  description: 'Aventuras y excursiones inolvidables para todos. ¡Descubre tu próximo destino con Todos tenemos derecho a disfrutar!',
 };
 
 export default function RootLayout({
