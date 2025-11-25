@@ -27,7 +27,6 @@ export default function ExcursionsPage() {
               <Link href={`/excursions/${category.id}`} key={category.id} className="group">
                 <Card className="h-full overflow-hidden text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-card">
                   <CardContent className="p-8 flex flex-col items-center justify-center gap-4">
-                    <category.icon className="w-20 h-20 text-primary transition-transform duration-300 group-hover:scale-110" />
                     <CardTitle className="text-2xl font-bold mt-4">{category.title}</CardTitle>
                     <CardDescription className="font-body">{category.description}</CardDescription>
                   </CardContent>

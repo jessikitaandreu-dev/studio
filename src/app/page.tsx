@@ -121,8 +121,7 @@ export default function Home() {
                       data-ai-hint={image.imageHint}
                     />
                   )}
-                  <CardContent className="p-6 flex flex-col items-center justify-center gap-4 h-full relative text-white">
-                    <category.icon className="w-16 h-16" />
+                  <CardContent className="p-6 flex flex-col items-center justify-center gap-2 h-full relative text-white">
                     <CardTitle className="text-xl font-bold text-shadow-lg">{category.title}</CardTitle>
                     <CardDescription className="text-white/90 text-shadow">{category.description}</CardDescription>
                   </CardContent>

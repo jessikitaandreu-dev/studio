@@ -42,7 +42,6 @@ export default function CategoryPage({ params }: { params: { category: string } 
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <categoryDetails.icon className="mx-auto h-16 w-16 text-primary mb-4" />
           <h1 className="text-4xl md:text-5xl font-bold">{categoryDetails.title}</h1>
           <p className="mt-2 text-lg text-muted-foreground font-body">{categoryDetails.description}</p>
         </div>
