@@ -12,22 +12,22 @@ export const metadata: Metadata = {
 
 const services = [
     {
-        icon: Bus,
+        imageId: "transport-modern-fleet",
         title: "Flota Moderna",
         description: "Vehículos modernos y cómodos, equipados con la última tecnología para un viaje placentero."
     },
     {
-        icon: ShieldCheck,
+        imageId: "transport-maximum-security",
         title: "Máxima Seguridad",
         description: "Conductores profesionales y experimentados. Cumplimos con todas las normativas de seguridad vigentes."
     },
     {
-        icon: Users,
+        imageId: "transport-group-adapted",
         title: "Adaptado a Grupos",
         description: "Soluciones para grupos de cualquier tamaño, desde minibuses para equipos pequeños hasta autocares completos."
     },
     {
-        icon: Star,
+        imageId: "transport-premium-service",
         title: "Servicio Premium",
         description: "Atención personalizada, flexibilidad en rutas y horarios, y un servicio al cliente excepcional."
     }
@@ -69,15 +69,27 @@ export default function TransportPage() {
           </div>
 
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-                <div key={index} className="text-center p-6 bg-card rounded-xl shadow-sm">
-                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mx-auto mb-6">
-                        <service.icon className="h-8 w-8" />
+            {services.map((service, index) => {
+                const image = PlaceHolderImages.find(p => p.id === service.imageId);
+                return (
+                <div key={index} className="text-center bg-card rounded-xl shadow-sm flex flex-col overflow-hidden">
+                    {image && (
+                        <div className="relative w-full h-48">
+                            <Image
+                                src={image.imageUrl}
+                                alt={service.title}
+                                fill
+                                className="object-cover"
+                                data-ai-hint={image.imageHint}
+                            />
+                        </div>
+                    )}
+                    <div className="p-6 flex flex-col flex-grow">
+                        <h3 className="text-xl font-bold font-headline mb-2">{service.title}</h3>
+                        <p className="text-muted-foreground font-body text-sm flex-grow">{service.description}</p>
                     </div>
-                    <h3 className="text-xl font-bold font-headline mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground font-body text-sm">{service.description}</p>
                 </div>
-            ))}
+            )})}
           </div>
         </div>
       </section>
