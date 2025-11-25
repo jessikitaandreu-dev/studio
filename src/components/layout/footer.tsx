@@ -29,6 +29,7 @@ export function Footer() {
               <li><Link href="/excursions" className="hover:text-primary transition-colors">Excursiones</Link></li>
               <li><Link href="/recommendations" className="hover:text-primary transition-colors">Recomendaciones</Link></li>
               <li><Link href="/transport" className="hover:text-primary transition-colors">Transporte</Link></li>
+              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
             </ul>
           </div>
           <div>

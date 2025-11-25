@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/excursions", label: "Ver Excursiones" },
   { href: "/recommendations", label: "Recomendador AI" },
   { href: "/transport", label: "Transporte" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function Header() {

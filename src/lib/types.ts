@@ -16,3 +16,13 @@ export type Excursion = {
   itinerary: string[];
   departureLocation: string;
 };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  description: string;
+  author: string;
+  date: string;
+  imageId: string;
+  content: string;
+};
