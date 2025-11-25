@@ -20,9 +20,9 @@
     },
     {
       "id": "farm-school",
-      "description": "A child petting a small goat at a farm school.",
-      "imageUrl": "https://images.unsplash.com/photo-1629702858998-ceaf1513cb45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZCUyMHBldHRpbmclMjBnb2F0fGVufDB8fHx8MTc2MzU4MDQwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "child petting goat"
+      "description": "Children feeding sheep at a farm.",
+      "imageUrl": "https://images.unsplash.com/photo-1500879747858-bb1845b61beb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGZlZWRpbmclMjBzaGVlcHxlbnwwfHx8fDE3NjM4NDU1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children feeding sheep"
     },
     {
       "id": "canyoning-adventure",
@@ -69,13 +69,13 @@
     {
       "id": "via-ferrata-sunrise",
       "description": "A climber on a via ferrata route, silhouetted against a beautiful sunrise over mountains.",
-      "imageUrl": "https://images.unsplash.com/photo-1557070372-94b160a8dfc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2aWElMjBmZXJyYXRhJTIwc3VucmlzZXxlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1557070372-94b160a8dfc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2aWElMjBmZXJyYXRhJTIwc3VucmlzZXxlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "via ferrata sunrise"
     },
     {
       "id": "horse-riding-park",
       "description": "A person riding a horse on a path through a lush green forest.",
-      "imageUrl": "https://images.unsplash.com/photo-1532876075969-8c016daf9242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob3JzZSUyMHJpZGluZ3xlbnwwfHx8fDE3NjM1ODA0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1532876075969-8c016daf9242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob3JzZSUyMHJpZGluZ3xlbnwwfHx8fDE3NjM1ODA0MDh8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "horse riding"
     }
   ]
