@@ -110,7 +110,7 @@ export default function Home() {
               const image = categoryImages[category.id as keyof typeof categoryImages];
               return (
               <Link href={`/excursions/${category.id}`} key={category.id} className="group">
-                <Card className="h-full overflow-hidden text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl relative">
+                <Card className="h-full overflow-hidden text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl relative aspect-[4/3]">
                    {image && (
                     <Image
                       src={image.imageUrl}
@@ -121,8 +121,8 @@ export default function Home() {
                     />
                   )}
                   <CardContent className="p-6 flex flex-col items-center justify-center gap-2 h-full relative text-white">
-                    <CardTitle className="text-xl font-bold text-shadow-lg">{category.title}</CardTitle>
-                    <CardDescription className="text-white/90 text-shadow">{category.description}</CardDescription>
+                    <CardTitle className="text-2xl lg:text-3xl font-bold text-shadow-lg">{category.title}</CardTitle>
+                    <CardDescription className="text-white/90 text-shadow text-base">{category.description}</CardDescription>
                   </CardContent>
                 </Card>
               </Link>
