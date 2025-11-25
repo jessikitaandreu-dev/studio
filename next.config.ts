@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'concepto.de',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'happyguau.es',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
