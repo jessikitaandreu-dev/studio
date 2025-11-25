@@ -1,5 +1,4 @@
 export type ExcursionCategory =
-  | 'accessible'
   | 'family'
   | 'singles'
   | 'nature-adventure'

@@ -12,7 +12,6 @@ export default function Home() {
   const featuredExcursions = getFeaturedExcursions();
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-home');
   const categoryImages = {
-    accessible: PlaceHolderImages.find(p => p.id === 'accessible-trail'),
     family: PlaceHolderImages.find(p => p.id === 'pirate-treasure-hunt'),
     singles: PlaceHolderImages.find(p => p.id === 'singles-boat-party'),
     'nature-adventure': PlaceHolderImages.find(p => p.id === 'canyoning-adventure'),
@@ -106,7 +105,7 @@ export default function Home() {
       <section id="categories" className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Explora por Categoría</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {excursionCategories.map((category) => {
               const image = categoryImages[category.id as keyof typeof categoryImages];
               return (

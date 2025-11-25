@@ -3,12 +3,6 @@ import type { Excursion, ExcursionCategory } from './types';
 
 export const excursionCategories = [
   {
-    id: 'accessible' as ExcursionCategory,
-    title: 'Accesibles',
-    description: 'Aventuras diseñadas para todos.',
-    icon: Icons.Accessible,
-  },
-  {
     id: 'family' as ExcursionCategory,
     title: 'Familiares',
     description: 'Diversión para todas las edades.',
@@ -35,16 +29,6 @@ export const excursionCategories = [
 ];
 
 export const excursions: Excursion[] = [
-  {
-    slug: 'ruta-senderos-accesibles',
-    title: 'Ruta por Senderos Accesibles',
-    category: 'accessible',
-    categoryLabel: 'Accesibles',
-    imageId: 'accessible-trail',
-    description: 'Disfruta de la naturaleza en una ruta adaptada con sillas de ruedas Joelette, permitiendo a todos explorar paisajes impresionantes sin barreras.',
-    itinerary: ['Punto de encuentro en el centro de visitantes.', 'Inicio de la ruta guiada por el parque natural.', 'Parada en mirador panorámico.', 'Almuerzo tipo picnic.', 'Regreso al punto de partida.'],
-    departureLocation: 'Centro de Visitantes del Parque Natural',
-  },
   {
     slug: 'dia-granja-escuela',
     title: 'Disfrutando de los animales',
@@ -86,16 +70,6 @@ export const excursions: Excursion[] = [
     description: 'Embárcate en una expedición marina para observar delfines y ballenas en su hábitat natural, acompañado por biólogos marinos que compartirán su conocimiento.',
     itinerary: ['Salida desde el puerto.', 'Charla introductoria sobre la fauna marina local.', 'Navegación en busca de cetáceos.', 'Observación respetuosa de los animales.', 'Vuelta a puerto.'],
     departureLocation: 'Muelle de Pescadores',
-  },
-  {
-    slug: 'cata-vinos-adaptada',
-    title: 'Cata de Vinos Adaptada',
-    category: 'accessible',
-    categoryLabel: 'Accesibles',
-    imageId: 'wine-tasting',
-    description: 'Explora una bodega con instalaciones completamente accesibles. Descubre el proceso de elaboración del vino y disfruta de una cata guiada de sus mejores caldos.',
-    itinerary: ['Bienvenida a la bodega.', 'Visita guiada por las instalaciones (viñedos y sala de barricas).', 'Cata comentada de 3 vinos con maridaje local.', 'Tiempo libre para compras.'],
-    departureLocation: 'Bodegas "Tierra Noble"',
   },
   {
     slug: 'busqueda-tesoro-pirata',
