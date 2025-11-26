@@ -17,7 +17,7 @@ import {
 
 async function toBase64(url: string): Promise<string> {
     const fetch = (await import('node-fetch')).default;
-    const response = await fetch(url);
+    const response = await fetch(`${url}&key=${process.env.GEMINI_API_KEY}`);
     if (!response.ok) {
         throw new Error(`Failed to fetch video: ${response.statusText}`);
     }
@@ -34,7 +34,7 @@ export async function createExcursionVideo(
       inputSchema: CreateExcursionVideoInputSchema,
       outputSchema: CreateExcursionVideoOutputSchema,
     },
-    async () => {
+    async (flowInput) => {
       const excursionDescriptions = excursions
         .map(e => `${e.title}: ${e.description}`)
         .join('\n');
@@ -77,5 +77,5 @@ The video should be visually stunning, fast-paced, and inspiring, with a sense o
     }
   );
 
-  return videoFlow();
+  return videoFlow(input);
 }
