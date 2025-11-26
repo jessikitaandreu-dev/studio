@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { createExcursionVideo } from '@/ai/flows/create-excursion-video';
-import { Loader2, Sparkles } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 
@@ -67,7 +67,7 @@ export function HeroVideo() {
              </div>
         )}
 
-        {!isLoading && (
+        {!isLoading && !videoUrl && !error && (
           <div className="animate-fade-in-down">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-shadow-lg">
               Tu Aventura Comienza Aquí

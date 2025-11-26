@@ -1,7 +1,7 @@
 'use server';
 
 import { personalizedAdventureRecommendation } from '@/ai/flows/personalized-adventure-recommendation';
-import type { PersonalizedAdventureRecommendationInput, PersonalizedAdventureRecommendationOutput } from '@/ai/flows/personalized-adventure-recommendation';
+import type { PersonalizedAdventureRecommendationInput, PersonalizedAdventureRecommendationOutput } from '@/ai/flows/personalized-adventure-recommendation.types';
 import { z } from 'zod';
 
 const formSchema = z.object({

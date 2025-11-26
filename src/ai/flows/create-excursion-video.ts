@@ -3,27 +3,21 @@
  * @fileOverview A flow for creating a video montage of excursions.
  *
  * - createExcursionVideo - A function that handles the video creation process.
- * - CreateExcursionVideoInput - The input type for the createExcursionVideo function.
- * - CreateExcursionVideoOutput - The return type for the createExcursionVideo function.
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
 import { excursions } from '@/lib/excursions';
-import { MediaPart } from 'genkit';
 import { googleAI } from '@genkit-ai/google-genai';
-
-export const CreateExcursionVideoInputSchema = z.null();
-export type CreateExcursionVideoInput = z.infer<typeof CreateExcursionVideoInputSchema>;
-
-export const CreateExcursionVideoOutputSchema = z.object({
-  video: z.string().describe('The generated video as a data URI.'),
-});
-export type CreateExcursionVideoOutput = z.infer<typeof CreateExcursionVideoOutputSchema>;
+import {
+  CreateExcursionVideoInputSchema,
+  CreateExcursionVideoOutputSchema,
+  type CreateExcursionVideoInput,
+  type CreateExcursionVideoOutput,
+} from './create-excursion-video.types';
 
 async function toBase64(url: string): Promise<string> {
     const fetch = (await import('node-fetch')).default;
-    const response = await fetch(`${url}&key=${process.env.GEMINI_API_KEY}`);
+    const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Failed to fetch video: ${response.statusText}`);
     }

@@ -11,8 +11,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Textarea } from '@/components/ui/textarea';
-import { Loader2, Sparkles, AlertTriangle, Route } from 'lucide-react';
-import type { PersonalizedAdventureRecommendationOutput } from '@/ai/flows/personalized-adventure-recommendation';
+import { Loader2, Sparkles, Route } from 'lucide-react';
+import type { PersonalizedAdventureRecommendationOutput } from '@/ai/flows/personalized-adventure-recommendation.types';
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
