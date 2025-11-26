@@ -7,7 +7,6 @@ import { getFeaturedExcursions, excursionCategories } from '@/lib/excursions';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ExcursionCard } from '@/components/excursion-card';
 import { ArrowRight } from 'lucide-react';
-import { HeroVideo } from '@/components/hero-video';
 
 export default function Home() {
   const featuredExcursions = getFeaturedExcursions();
@@ -18,10 +17,39 @@ export default function Home() {
     family: PlaceHolderImages.find(p => p.id === 'farm-school'),
   }
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-home');
 
   return (
     <div className="flex flex-col">
-      <HeroVideo />
+      <section className="relative h-[70vh] md:h-[90vh] w-full flex items-center justify-center text-center text-white">
+          <div className="absolute inset-0 bg-black/60 z-10" />
+          {heroImage && (
+              <Image
+                  src={heroImage.imageUrl}
+                  alt={heroImage.description}
+                  fill
+                  priority
+                  className="object-cover"
+                  data-ai-hint={heroImage.imageHint}
+              />
+          )}
+          <div className="relative z-20 p-4 max-w-4xl mx-auto animate-fade-in-down">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-shadow-lg">
+                  Tu Aventura Comienza Aquí
+              </h1>
+              <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto font-body">
+                  Explora destinos increíbles con Todos tenemos derecho a disfrutar. Excursiones únicas diseñadas para cada tipo de aventurero.
+              </p>
+              <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-600">
+                  <Button asChild size="lg" className="font-bold">
+                      <Link href="/excursions">Ver Excursiones</Link>
+                  </Button>
+                  <Button asChild size="lg" variant="secondary" className="font-bold">
+                      <Link href="/recommendations">Obtener Recomendación</Link>
+                  </Button>
+              </div>
+          </div>
+      </section>
 
       <section id="featured" className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4">
