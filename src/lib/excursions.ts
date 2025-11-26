@@ -3,12 +3,6 @@ import type { Excursion, ExcursionCategory } from './types';
 
 export const excursionCategories = [
   {
-    id: 'family' as ExcursionCategory,
-    title: 'Familiares',
-    description: 'Aventuras para todas las edades.',
-    icon: Icons.Family,
-  },
-  {
     id: 'singles' as ExcursionCategory,
     title: 'Para Solteros',
     description: 'Conoce gente y vive experiencias.',
@@ -26,22 +20,15 @@ export const excursionCategories = [
     description: 'Aventuras junto a tu mejor amigo.',
     icon: Icons.Animals,
   },
+  {
+    id: 'family' as ExcursionCategory,
+    title: 'Familiares',
+    description: 'Aventuras para todas las edades.',
+    icon: Icons.Family,
+  },
 ];
 
 export const excursions: Excursion[] = [
-  {
-    slug: 'disfrutando-de-los-animales',
-    title: 'Disfrutando de los animales',
-    category: 'family',
-    categoryLabel: 'Familiares',
-    isFeatured: true,
-    imageId: 'farm-school',
-    description: 'Una experiencia educativa y divertida para toda la familia. Los niños podrán interactuar con animales de granja en un entorno seguro y aprender sobre su cuidado.',
-    itinerary: ['Llegada a la granja escuela.', 'Visita guiada por las instalaciones.', 'Taller de alimentación de animales.', 'Paseo en pony.', 'Tiempo libre para jugar en el área recreativa.'],
-    departureLocation: 'Entrada de la Granja Escuela "El Pinar"',
-    arrivalLocation: 'Entrada de la Granja Escuela "El Pinar"',
-    duration: '1 Día',
-  },
   {
     slug: 'fiesta-barco-solteros',
     title: 'Fiesta en Barco para Solteros',
@@ -116,7 +103,20 @@ export const excursions: Excursion[] = [
     departureLocation: 'Parking del Parque Natural de la Sierra',
     arrivalLocation: 'Parking del Parque Natural de la Sierra',
     duration: '3 Horas',
-  }
+  },
+  {
+    slug: 'disfrutando-de-los-animales',
+    title: 'Disfrutando de los animales',
+    category: 'family',
+    categoryLabel: 'Familiares',
+    isFeatured: true,
+    imageId: 'farm-school',
+    description: 'Una experiencia educativa y divertida para toda la familia. Los niños podrán interactuar con animales de granja en un entorno seguro y aprender sobre su cuidado.',
+    itinerary: ['Llegada a la granja escuela.', 'Visita guiada por las instalaciones.', 'Taller de alimentación de animales.', 'Paseo en pony.', 'Tiempo libre para jugar en el área recreativa.'],
+    departureLocation: 'Entrada de la Granja Escuela "El Pinar"',
+    arrivalLocation: 'Entrada de la Granja Escuela "El Pinar"',
+    duration: '1 Día',
+  },
 ];
 
 export function getExcursions() {

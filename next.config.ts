@@ -42,6 +42,19 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '20mb',
+    },
+  },
+  httpAgentOptions: {
+    keepAlive: true,
+  },
+  web: {
+    serverActions: {
+      maxBodySize: '20mb',
+    }
+  }
 };
 
 export default nextConfig;
