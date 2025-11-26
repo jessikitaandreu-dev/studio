@@ -12,7 +12,7 @@ export default function Home() {
   const featuredExcursions = getFeaturedExcursions();
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-home');
   const categoryImages = {
-    family: PlaceHolderImages.find(p => p.id === 'pirate-treasure-hunt'),
+    family: PlaceHolderImages.find(p => p.id === 'farm-school'),
     singles: PlaceHolderImages.find(p => p.id === 'singles-boat-party'),
     'nature-adventure': PlaceHolderImages.find(p => p.id === 'canyoning-adventure'),
     animals: PlaceHolderImages.find(p => p.id === 'hiking-with-dogs'),
