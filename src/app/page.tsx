@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { getFeaturedExcursions, excursionCategories } from '@/lib/excursions';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ExcursionCard } from '@/components/excursion-card';
-import { ArrowRight, Waves } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const featuredExcursions = getFeaturedExcursions();
@@ -34,7 +34,7 @@ export default function Home() {
           />
         )}
         <div className="relative z-20 p-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-shadow-lg animate-fade-in-down">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-shadow-lg animate-fade-in-down">
             Tu Aventura Comienza Aquí
           </h1>
           <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto font-body animate-fade-in-up animation-delay-300">
@@ -53,8 +53,7 @@ export default function Home() {
 
       <section id="featured" className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Excursiones Destacadas</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">Experiencias inolvidables que no te puedes perder. Seleccionadas con esmero para ti.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Excursiones Destacadas</h2>
           <Carousel
             opts={{
               align: 'start',
@@ -79,9 +78,8 @@ export default function Home() {
       
       <section id="categories" className="py-20 lg:py-28 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Explora por Categoría</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">Encuentra la aventura que mejor se adapta a tu estilo. ¿Qué te apetece hoy?</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Explora por Categoría</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {excursionCategories.map((category) => {
               const image = categoryImages[category.id as keyof typeof categoryImages];
               return (
@@ -110,7 +108,7 @@ export default function Home() {
       <section id="about" className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="prose prose-lg max-w-none text-foreground font-body">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre Todos tenemos derecho a disfrutar</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Todos tenemos derecho a disfrutar</h2>
             <p className="lead text-muted-foreground">
               Nacimos de la pasión por descubrir el mundo y conectar con la naturaleza. En Todos tenemos derecho a disfrutar, creemos que cada viaje es una oportunidad para crear recuerdos imborrables.
             </p>

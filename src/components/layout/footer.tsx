@@ -30,6 +30,7 @@ export function Footer() {
               <li><Link href="/recommendations" className="text-muted-foreground hover:text-primary transition-colors">Recomendaciones</Link></li>
               <li><Link href="/transport" className="text-muted-foreground hover:text-primary transition-colors">Transporte</Link></li>
               <li><Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contacto</Link></li>
             </ul>
           </div>
           <div>
