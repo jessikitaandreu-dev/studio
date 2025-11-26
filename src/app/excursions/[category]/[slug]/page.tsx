@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, MapPin, ArrowLeft } from 'lucide-react';
+import { CheckCircle, MapPin, ArrowLeft, Clock, MapPinOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -94,6 +94,20 @@ export default function ExcursionDetailPage({ params }: { params: { slug:string 
                   <div>
                     <p className="font-bold">Lugar de Salida</p>
                     <p className="text-muted-foreground">{excursion.departureLocation}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPinOff className="h-6 w-6 text-primary" />
+                  <div>
+                    <p className="font-bold">Lugar de Llegada</p>
+                    <p className="text-muted-foreground">{excursion.arrivalLocation}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="h-6 w-6 text-primary" />
+                  <div>
+                    <p className="font-bold">Duración</p>
+                    <p className="text-muted-foreground">{excursion.duration}</p>
                   </div>
                 </div>
                 <Button size="lg" className="w-full mt-4" asChild>

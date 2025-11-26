@@ -14,6 +14,8 @@ export type Excursion = {
   description: string;
   itinerary: string[];
   departureLocation: string;
+  arrivalLocation: string;
+  duration: string;
 };
 
 export type BlogPost = {
