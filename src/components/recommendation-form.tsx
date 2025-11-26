@@ -63,181 +63,205 @@ export function RecommendationForm() {
     }
   }, [state.error, toast]);
 
-  const { isSubmitting, isSubmitSuccessful } = form.formState;
+  const { isSubmitting } = form.formState;
   
   const onSubmit = (data: FormValues) => {
     formAction(data);
   };
 
   return (
-    <div className="grid md:grid-cols-2 gap-12">
-      <div>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <FormField
-              control={form.control}
-              name="riskLevel"
-              render={({ field }) => (
-                <FormItem className="space-y-3">
-                  <FormLabel className="text-lg font-bold">Nivel de Riesgo</FormLabel>
-                  <FormControl>
-                    <RadioGroup
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                      className="flex flex-col space-y-1"
-                    >
-                      <FormItem className="flex items-center space-x-3 space-y-0">
-                        <FormControl>
-                          <RadioGroupItem value="bajo" />
-                        </FormControl>
-                        <FormLabel className="font-normal">Bajo (Relajado y seguro)</FormLabel>
-                      </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0">
-                        <FormControl>
-                          <RadioGroupItem value="medio" />
-                        </FormControl>
-                        <FormLabel className="font-normal">Medio (Un poco de emoción)</FormLabel>
-                      </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0">
-                        <FormControl>
-                          <RadioGroupItem value="alto" />
-                        </FormControl>
-                        <FormLabel className="font-normal">Alto (Pura adrenalina)</FormLabel>
-                      </FormItem>
-                    </RadioGroup>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+    <div className="grid lg:grid-cols-5 gap-12">
+      <div className="lg:col-span-3">
+        <Card>
+          <CardHeader>
+            <CardTitle>Cuéntanos tus preferencias</CardTitle>
+            <CardDescription>Rellena el formulario para que nuestra IA te sorprenda.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="riskLevel"
+                  render={({ field }) => (
+                    <FormItem className="space-y-3">
+                      <FormLabel className="font-semibold">Nivel de Riesgo</FormLabel>
+                      <FormControl>
+                        <RadioGroup
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                          className="grid grid-cols-3 gap-4"
+                        >
+                          <FormItem>
+                            <FormControl>
+                                <RadioGroupItem value="bajo" id="risk-low" className="sr-only"/>
+                            </FormControl>
+                            <FormLabel htmlFor="risk-low" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
+                                Bajo
+                            </FormLabel>
+                          </FormItem>
+                           <FormItem>
+                            <FormControl>
+                                <RadioGroupItem value="medio" id="risk-medium" className="sr-only"/>
+                            </FormControl>
+                            <FormLabel htmlFor="risk-medium" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
+                                Medio
+                            </FormLabel>
+                          </FormItem>
+                           <FormItem>
+                            <FormControl>
+                                <RadioGroupItem value="alto" id="risk-high" className="sr-only"/>
+                            </FormControl>
+                            <FormLabel htmlFor="risk-high" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
+                                Alto
+                            </FormLabel>
+                          </FormItem>
+                        </RadioGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-            <FormField
-              control={form.control}
-              name="groupDynamic"
-              render={({ field }) => (
-                <FormItem className="space-y-3">
-                  <FormLabel className="text-lg font-bold">Dinámica de Grupo</FormLabel>
-                  <FormControl>
-                    <RadioGroup
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                      className="flex flex-col space-y-1"
-                    >
-                      <FormItem className="flex items-center space-x-3 space-y-0">
+                <FormField
+                  control={form.control}
+                  name="groupDynamic"
+                  render={({ field }) => (
+                    <FormItem className="space-y-3">
+                      <FormLabel className="font-semibold">Dinámica de Grupo</FormLabel>
+                      <FormControl>
+                        <RadioGroup
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                          className="grid grid-cols-3 gap-4"
+                        >
+                          <FormItem>
+                            <FormControl>
+                                <RadioGroupItem value="familiar" id="group-family" className="sr-only"/>
+                            </FormControl>
+                            <FormLabel htmlFor="group-family" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
+                                Familiar
+                            </FormLabel>
+                          </FormItem>
+                           <FormItem>
+                            <FormControl>
+                                <RadioGroupItem value="solteros" id="group-singles" className="sr-only"/>
+                            </FormControl>
+                            <FormLabel htmlFor="group-singles" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
+                                Solteros
+                            </FormLabel>
+                          </FormItem>
+                           <FormItem>
+                            <FormControl>
+                                <RadioGroupItem value="accesible" id="group-accessible" className="sr-only"/>
+                            </FormControl>
+                            <FormLabel htmlFor="group-accessible" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
+                                Accesible
+                            </FormLabel>
+                          </FormItem>
+                        </RadioGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                    <FormField
+                    control={form.control}
+                    name="landscapePreferences"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel className="font-semibold">Preferencias de Paisaje</FormLabel>
                         <FormControl>
-                          <RadioGroupItem value="familiar" />
+                            <Input placeholder="Ej: montañas, playas..." {...field} />
                         </FormControl>
-                        <FormLabel className="font-normal">Familiar</FormLabel>
-                      </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+
+                    <FormField
+                    control={form.control}
+                    name="equipmentNeeds"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel className="font-semibold">Equipamiento Necesario</FormLabel>
                         <FormControl>
-                          <RadioGroupItem value="solteros" />
+                            <Input placeholder="Ej: equipo de senderismo..." {...field} />
                         </FormControl>
-                        <FormLabel className="font-normal">Solteros</FormLabel>
-                      </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                    <FormField
+                    control={form.control}
+                    name="priceRange"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel className="font-semibold">Rango de Precios</FormLabel>
                         <FormControl>
-                          <RadioGroupItem value="accesible" />
+                            <Input placeholder="Ej: económico, moderado..." {...field} />
                         </FormControl>
-                        <FormLabel className="font-normal">Accesible</FormLabel>
-                      </FormItem>
-                    </RadioGroup>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
 
-            <FormField
-              control={form.control}
-              name="landscapePreferences"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-bold">Preferencias de Paisaje</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Ej: montañas, playas, bosques, desiertos..." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                    <FormField
+                    control={form.control}
+                    name="availability"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel className="font-semibold">Disponibilidad</FormLabel>
+                        <FormControl>
+                            <Input placeholder="Ej: fines de semana, agosto..." {...field} />
+                        </FormControl>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                </div>
 
-            <FormField
-              control={form.control}
-              name="equipmentNeeds"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-bold">Equipamiento Necesario</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Ej: equipo de senderismo, snorkel, todo incluido..." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="priceRange"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-bold">Rango de Precios</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Ej: económico, moderado, premium..." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="availability"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-bold">Disponibilidad</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Ej: fines de semana, agosto, cualquier fecha..." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <Button type="submit" disabled={isSubmitting} size="lg" className="w-full">
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Buscando tu aventura...
-                </>
-              ) : (
-                <>
-                  <Sparkles className="mr-2 h-4 w-4" />
-                  Obtener Recomendación
-                </>
-              )}
-            </Button>
-          </form>
-        </Form>
+                <Button type="submit" disabled={isSubmitting} size="lg" className="w-full">
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Buscando tu aventura...
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="mr-2 h-4 w-4" />
+                      Obtener Recomendación
+                    </>
+                  )}
+                </Button>
+              </form>
+            </Form>
+          </CardContent>
+        </Card>
       </div>
-      <div className="sticky top-24 h-fit">
+      <div className="lg:col-span-2 sticky top-24 h-fit">
         {isSubmitting && (
-            <Card className="flex flex-col items-center justify-center h-96 bg-muted/50">
-                <Loader2 className="h-16 w-16 animate-spin text-primary" />
+            <Card className="flex flex-col items-center justify-center min-h-[500px] bg-card">
+                <Loader2 className="h-12 w-12 animate-spin text-primary" />
                 <p className="mt-4 text-muted-foreground font-body">Generando tu aventura perfecta...</p>
             </Card>
         )}
         {!isSubmitting && state.data && (
-             <Card className="bg-gradient-to-br from-accent/50 to-background shadow-lg border-primary/50 animate-fade-in-up">
+             <Card className="bg-card shadow-lg animate-fade-in-up">
                 <CardHeader>
                     <CardDescription className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-primary" /> Tu aventura recomendada</CardDescription>
-                    <CardTitle className="text-3xl">{state.data.excursionName}</CardTitle>
+                    <CardTitle className="text-2xl">{state.data.excursionName}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 font-body">
-                    <p>{state.data.excursionDescription}</p>
+                    <p className="text-muted-foreground">{state.data.excursionDescription}</p>
                     <div>
                         <h4 className="font-bold font-headline text-lg mb-2">Itinerario Sugerido:</h4>
-                        <Textarea readOnly value={state.data.excursionItinerary} rows={6} className="bg-background/50" />
+                        <Textarea readOnly value={state.data.excursionItinerary} rows={6} className="bg-secondary/30 text-sm" />
                     </div>
                 </CardContent>
                 <CardFooter>
@@ -246,7 +270,7 @@ export function RecommendationForm() {
              </Card>
         )}
         {!isSubmitting && !state.data && (
-             <Card className="flex flex-col items-center justify-center text-center h-96 bg-accent/20 border-dashed">
+             <Card className="hidden lg:flex flex-col items-center justify-center text-center min-h-[500px] bg-secondary/30 border-2 border-dashed">
                 <Sparkles className="h-16 w-16 text-primary/50" />
                 <h3 className="mt-4 text-xl font-bold">¿Listo para la aventura?</h3>
                 <p className="mt-2 text-muted-foreground max-w-sm">Completa el formulario y deja que nuestra IA encuentre la excursión perfecta para ti.</p>

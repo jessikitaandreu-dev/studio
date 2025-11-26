@@ -4,6 +4,13 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
+import { Figtree } from 'next/font/google'
+
+const figtree = Figtree({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-figtree',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -19,12 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Belleza&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="es" className={cn("scroll-smooth", figtree.variable)} suppressHydrationWarning>
       <body className={cn("font-body bg-background text-foreground antialiased min-h-screen flex flex-col")}>
         <Header />
         <main className="flex-grow">{children}</main>

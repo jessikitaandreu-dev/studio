@@ -16,16 +16,16 @@ export function ExcursionCard({ excursion, className }: ExcursionCardProps) {
   const image = PlaceHolderImages.find((img) => img.id === excursion.imageId);
 
   return (
-    <Card className={cn("flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1", className)}>
-      <Link href={`/excursions/${excursion.category}/${excursion.slug}`} className="flex flex-col h-full">
+    <Card className={cn("flex flex-col overflow-hidden group", className)}>
+      <Link href={`/excursions/${excursion.category}/${excursion.slug}`} className="flex flex-col h-full bg-card rounded-lg border shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         <CardHeader className="p-0">
-          <div className="relative h-56 w-full">
+          <div className="relative h-56 w-full overflow-hidden">
             {image ? (
               <Image
                 src={image.imageUrl}
                 alt={excursion.title}
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 data-ai-hint={image.imageHint}
               />
@@ -40,13 +40,13 @@ export function ExcursionCard({ excursion, className }: ExcursionCardProps) {
           </div>
         </CardHeader>
         <CardContent className="flex-grow p-6">
-          <CardTitle className="text-2xl mb-2">{excursion.title}</CardTitle>
-          <Badge variant="secondary" className="mb-4">{excursion.categoryLabel}</Badge>
-          <CardDescription className="line-clamp-3 font-body">{excursion.description}</CardDescription>
+          <Badge variant="secondary" className="mb-2 text-xs">{excursion.categoryLabel}</Badge>
+          <CardTitle className="text-xl mb-2 font-bold">{excursion.title}</CardTitle>
+          <CardDescription className="line-clamp-3 font-body text-sm">{excursion.description}</CardDescription>
         </CardContent>
         <CardFooter className="p-6 pt-0">
-            <span className="flex items-center font-bold text-primary group-hover:text-primary-dark transition-colors">
-              Ver más <ArrowRight className="ml-2 h-4 w-4" />
+            <span className="flex items-center text-sm font-bold text-primary group-hover:underline">
+              Ver más <ArrowRight className="ml-1 h-4 w-4" />
             </span>
         </CardFooter>
       </Link>

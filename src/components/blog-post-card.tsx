@@ -15,16 +15,16 @@ export function BlogPostCard({ post, className }: BlogPostCardProps) {
   const image = PlaceHolderImages.find((img) => img.id === post.imageId);
 
   return (
-    <Card className={cn("flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1", className)}>
-      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full group">
+    <Card className={cn("flex flex-col overflow-hidden group", className)}>
+      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full bg-card rounded-lg border shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         <CardHeader className="p-0">
-          <div className="relative h-56 w-full">
+          <div className="relative h-56 w-full overflow-hidden">
             {image ? (
               <Image
                 src={image.imageUrl}
                 alt={post.title}
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 data-ai-hint={image.imageHint}
               />
@@ -36,22 +36,22 @@ export function BlogPostCard({ post, className }: BlogPostCardProps) {
           </div>
         </CardHeader>
         <CardContent className="flex-grow p-6">
-          <CardTitle className="text-2xl mb-2">{post.title}</CardTitle>
-          <CardDescription className="line-clamp-3 font-body">{post.description}</CardDescription>
+          <CardTitle className="text-xl mb-2 font-bold">{post.title}</CardTitle>
+          <div className="flex items-center text-xs text-muted-foreground gap-4 mb-4">
+              <div className="flex items-center gap-1.5">
+                  <User className="h-4 w-4"/>
+                  <span>{post.author}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                  <Calendar className="h-4 w-4"/>
+                  <span>{new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+          </div>
+          <CardDescription className="line-clamp-3 font-body text-sm">{post.description}</CardDescription>
         </CardContent>
-        <CardFooter className="p-6 pt-0 flex-col items-start gap-4">
-            <div className="flex items-center text-sm text-muted-foreground gap-4">
-                <div className="flex items-center gap-2">
-                    <User className="h-4 w-4"/>
-                    <span>{post.author}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4"/>
-                    <span>{new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                </div>
-            </div>
-            <span className="flex items-center font-bold text-primary group-hover:text-primary-dark transition-colors">
-              Leer más <ArrowRight className="ml-2 h-4 w-4" />
+        <CardFooter className="p-6 pt-0">
+            <span className="flex items-center font-bold text-primary group-hover:underline text-sm">
+              Leer más <ArrowRight className="ml-1 h-4 w-4" />
             </span>
         </CardFooter>
       </Link>

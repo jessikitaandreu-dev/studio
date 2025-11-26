@@ -13,7 +13,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-card text-card-foreground border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
@@ -26,18 +26,18 @@ export function Footer() {
           <div>
             <h3 className="font-bold font-headline text-lg mb-4">Navegación</h3>
             <ul className="space-y-2 font-body text-sm">
-              <li><Link href="/excursions" className="hover:text-primary transition-colors">Excursiones</Link></li>
-              <li><Link href="/recommendations" className="hover:text-primary transition-colors">Recomendaciones</Link></li>
-              <li><Link href="/transport" className="hover:text-primary transition-colors">Transporte</Link></li>
-              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link href="/excursions" className="text-muted-foreground hover:text-primary transition-colors">Excursiones</Link></li>
+              <li><Link href="/recommendations" className="text-muted-foreground hover:text-primary transition-colors">Recomendaciones</Link></li>
+              <li><Link href="/transport" className="text-muted-foreground hover:text-primary transition-colors">Transporte</Link></li>
+              <li><Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-bold font-headline text-lg mb-4">Categorías</h3>
             <ul className="space-y-2 font-body text-sm">
-              <li><Link href="/excursions/family" className="hover:text-primary transition-colors">Familiares</Link></li>
-              <li><Link href="/excursions/nature-adventure" className="hover:text-primary transition-colors">Naturaleza</Link></li>
-              <li><Link href="/excursions/animals" className="hover:text-primary transition-colors">Con Animales</Link></li>
+              <li><Link href="/excursions/family" className="text-muted-foreground hover:text-primary transition-colors">Familiares</Link></li>
+              <li><Link href="/excursions/nature-adventure" className="text-muted-foreground hover:text-primary transition-colors">Naturaleza</Link></li>
+              <li><Link href="/excursions/animals" className="text-muted-foreground hover:text-primary transition-colors">Con Animales</Link></li>
             </ul>
           </div>
           <div>

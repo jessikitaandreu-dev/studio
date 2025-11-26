@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Alegreya', 'serif'],
-        headline: ['Belleza', 'serif'],
+        body: ['var(--font-figtree)', 'sans-serif'],
+        headline: ['var(--font-figtree)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -113,8 +113,8 @@ export default {
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
       },
       textShadow: {
-        DEFAULT: '0 2px 4px rgba(0, 0, 0, 0.10)',
-        lg: '0 4px 10px rgba(0, 0, 0, 0.25)',
+        DEFAULT: '0 1px 3px rgba(0, 0, 0, 0.20)',
+        lg: '0 2px 8px rgba(0, 0, 0, 0.35)',
       },
     },
   },
