@@ -36,7 +36,6 @@ export function Footer() {
           <div>
             <h3 className="font-bold font-headline text-lg mb-4">Categorías</h3>
             <ul className="space-y-2 font-body text-sm">
-              <li><Link href="/excursions/family" className="text-muted-foreground hover:text-primary transition-colors">Familiares</Link></li>
               <li><Link href="/excursions/nature-adventure" className="text-muted-foreground hover:text-primary transition-colors">Naturaleza</Link></li>
               <li><Link href="/excursions/animals" className="text-muted-foreground hover:text-primary transition-colors">Con Animales</Link></li>
             </ul>

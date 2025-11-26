@@ -3,12 +3,6 @@ import type { Excursion, ExcursionCategory } from './types';
 
 export const excursionCategories = [
   {
-    id: 'family' as ExcursionCategory,
-    title: 'Familiares',
-    description: 'Diversión para todas las edades.',
-    icon: Icons.Family,
-  },
-  {
     id: 'singles' as ExcursionCategory,
     title: 'Para Solteros',
     description: 'Conoce gente y vive experiencias.',
