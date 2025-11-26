@@ -17,7 +17,11 @@ import {
 
 async function toBase64(url: string): Promise<string> {
     const fetch = (await import('node-fetch')).default;
-    const response = await fetch(`${url}&key=${process.env.GEMINI_API_KEY}`);
+    const response = await fetch(url, {
+        headers: {
+            'X-Goog-Api-Key': process.env.GEMINI_API_KEY || '',
+        }
+    });
     if (!response.ok) {
         throw new Error(`Failed to fetch video: ${response.statusText}`);
     }
