@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useState, useEffect } from 'react';
-import { Mountain, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/excursions", label: "Excursiones" },
@@ -37,7 +38,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-            <Mountain className="h-8 w-8 text-primary" />
+            <Image src="/logo.png" alt="Logo" width={32} height={32} className="h-8 w-8 text-primary" />
             <span className={cn(
               "text-xl font-bold font-headline transition-colors", 
               isScrolled ? "text-foreground" : "text-white md:text-foreground"
@@ -74,7 +75,7 @@ export function Header() {
                   <div className="flex flex-col h-full">
                       <div className="flex justify-between items-center p-6 border-b">
                           <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                              <Mountain className="h-8 w-8 text-primary" />
+                              <Image src="/logo.png" alt="Logo" width={32} height={32} className="h-8 w-8 text-primary" />
                               <span className="text-lg font-bold font-headline text-foreground">
                                   Todos tenemos derecho a disfrutar
                               </span>
