@@ -24,17 +24,6 @@ export const excursionCategories = [
 
 export const excursions: Excursion[] = [
   {
-    slug: 'dia-granja-escuela',
-    title: 'Disfrutando de los animales',
-    category: 'family',
-    categoryLabel: 'Familiares',
-    isFeatured: true,
-    imageId: 'farm-school',
-    description: 'Una jornada perfecta para los más pequeños, donde podrán interactuar con animales de granja, aprender sobre el campo y participar en talleres de manualidades.',
-    itinerary: ['Bienvenida y presentación de la granja.', 'Taller de alimentación de animales.', 'Paseo en pony.', 'Comida campestre.', 'Taller de elaboración de pan.'],
-    departureLocation: 'Entrada de la Granja "La Vereda"',
-  },
-  {
     slug: 'fiesta-barco-solteros',
     title: 'Fiesta en Barco para Solteros',
     category: 'singles',
@@ -64,16 +53,6 @@ export const excursions: Excursion[] = [
     description: 'Embárcate en una expedición marina para observar delfines y ballenas en su hábitat natural, acompañado por biólogos marinos que compartirán su conocimiento.',
     itinerary: ['Salida desde el puerto.', 'Charla introductoria sobre la fauna marina local.', 'Navegación en busca de cetáceos.', 'Observación respetuosa de los animales.', 'Vuelta a puerto.'],
     departureLocation: 'Muelle de Pescadores',
-  },
-  {
-    slug: 'busqueda-tesoro-pirata',
-    title: 'Búsqueda del Tesoro Pirata',
-    category: 'family',
-    categoryLabel: 'Familiares',
-    imageId: 'pirate-treasure-hunt',
-    description: 'Una aventura interactiva para toda la familia. Seguid las pistas, resolved los acertijos y encontrad el tesoro escondido del Capitán Barbanegra.',
-    itinerary: ['Reunión en la playa y formación de equipos.', 'Entrega del mapa y primera pista.', 'Recorrido por diferentes puntos de la costa.', 'Juegos y pruebas de habilidad.', 'Hallazgo del tesoro y reparto del botín.'],
-    departureLocation: 'Playa de las Conchas',
   },
   {
     slug: 'ruta-gastronomica-pueblos',
