@@ -64,7 +64,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto prose prose-lg lg:prose-xl text-center">
              <h2 className="text-3xl md:text-4xl font-bold">Nuestra Misión</h2>
              <p className="text-muted-foreground font-body text-lg">
-                Nacimos de la pasión por descubrir el mundo y conectar con la naturaleza. En <strong>Todos tenemos derecho a disfrutar</strong>, creemos que cada viaje es una oportunidad para crear recuerdos imborrables. Nuestra misión es ofrecer experiencias auténticas y emocionantes, adaptadas a todos los espíritus aventureros. Desde tranquilas escapadas familiares hasta desafíos llenos de adrenalina, contamos con un equipo de guías expertos y comprometidos con la seguridad y la sostenibilidad.
+                Nacimos de la pasión por descubrir el mundo y creemos que nadie debería quedarse atrás. En <strong>Todos tenemos derecho a disfrutar</strong>, nuestra misión destacada es crear aventuras inolvidables que puedas compartir con tus compañeros más fieles: tus animales. Diseñamos excursiones y viajes donde tus mascotas no solo son bienvenidas, sino que son las protagonistas. ¡Porque la aventura es mejor en compañía!
              </p>
           </div>
 
