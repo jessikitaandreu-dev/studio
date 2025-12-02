@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Bus, ShieldCheck, Star, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
