@@ -52,11 +52,6 @@ const nextConfig: NextConfig = {
   httpAgentOptions: {
     keepAlive: true,
   },
-  web: {
-    serverActions: {
-      maxBodySize: '20mb',
-    }
-  }
 };
 
 export default nextConfig;
