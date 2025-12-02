@@ -75,8 +75,8 @@ export const excursions: Excursion[] = [
     imageId: 'cultural-getaway-singles',
     description: 'Viaja y sumérgete en la riqueza cultural de las ciudades más fascinantes de Europa. Organizamos todo para que solo te preocupes de disfrutar.',
     itinerary: ['Vuelos y alojamiento en hotel céntrico.', 'Visitas guiadas a los principales museos y monumentos.', 'Eventos sociales y culturales.', 'Tiempo libre para explorar a tu aire.', 'Guía acompañante durante todo el viaje.'],
-    departureLocation: 'Aeropuertos de Madrid, Barcelona, Valencia',
-    arrivalLocation: 'Principales ciudades europeas (Roma, París, Lisboa, etc.)',
+    departureLocation: 'Aeropuerto de Madrid o Barcelona',
+    arrivalLocation: 'Principales ciudades europeas',
     duration: '3 días / 2 noches',
   },
   {
