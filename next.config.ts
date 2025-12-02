@@ -31,8 +31,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https
-',
+        protocol: 'https',
         hostname: 'happyguau.es',
         port: '',
         pathname: '/**',
