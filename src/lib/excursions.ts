@@ -69,8 +69,8 @@ export const excursions: Excursion[] = [
   {
     slug: 'escapadas-culturales-europa-singles',
     title: 'Escapadas Culturales por Europa',
-    category: 'singles',
-    categoryLabel: 'Para Solteros',
+    category: 'nature-adventure',
+    categoryLabel: 'Aventura Cultural',
     isFeatured: true,
     imageId: 'cultural-getaway-singles',
     description: 'Viaja, conoce gente nueva y sumérgete en la riqueza cultural de las ciudades más fascinantes de Europa. Organizamos todo para que solo te preocupes de disfrutar.',
