@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
+import { ContactForm } from '@/components/contact-form';
 
 export const metadata: Metadata = {
   title: 'Contacto',
@@ -21,7 +22,7 @@ export default function ContactPage() {
 
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl font-bold font-headline mb-4">Nuestra Oficina</h2>
@@ -59,7 +60,7 @@ export default function ContactPage() {
             
             <div className="bg-card p-8 rounded-lg shadow-lg">
                  <h2 className="text-3xl font-bold font-headline mb-6">Envíanos un Mensaje</h2>
-                 <p className="text-muted-foreground font-body">Para presupuestos de transporte, recomendaciones personalizadas o cualquier otra consulta, por favor visita nuestra sección de <a href="/recommendations" className="text-primary underline hover:no-underline">Recomendador AI</a> donde podrás rellenar un formulario detallado y te contactaremos a la brevedad.</p>
+                 <ContactForm />
             </div>
           </div>
         </div>

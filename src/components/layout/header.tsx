@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/excursions", label: "Excursiones" },
-  { href: "/recommendations", label: "Recomendador AI" },
+  { href: "/about", label: "Quiénes Somos" },
   { href: "/transport", label: "Transporte" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contacto" },

@@ -27,7 +27,7 @@ export function Footer() {
             <h3 className="font-bold font-headline text-lg mb-4">Navegación</h3>
             <ul className="space-y-2 font-body text-sm">
               <li><Link href="/excursions" className="text-muted-foreground hover:text-primary transition-colors">Excursiones</Link></li>
-              <li><Link href="/recommendations" className="text-muted-foreground hover:text-primary transition-colors">Recomendaciones</Link></li>
+              <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">Quiénes Somos</Link></li>
               <li><Link href="/transport" className="text-muted-foreground hover:text-primary transition-colors">Transporte</Link></li>
               <li><Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contacto</Link></li>

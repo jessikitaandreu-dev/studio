@@ -45,7 +45,7 @@ export default function Home() {
                       <Link href="/excursions">Ver Excursiones</Link>
                   </Button>
                   <Button asChild size="lg" variant="secondary" className="font-bold">
-                      <Link href="/recommendations">Obtener Recomendación</Link>
+                      <Link href="/contact">Contacta con Nosotros</Link>
                   </Button>
               </div>
           </div>
@@ -115,7 +115,7 @@ export default function Home() {
               Nuestra misión es ofrecer experiencias auténticas y emocionantes, adaptadas a todos los espíritus aventureros. Desde tranquilas escapadas familiares hasta desafíos llenos de adrenalina, contamos con un equipo de guías expertos y comprometidos con la seguridad y la sostenibilidad.
             </p>
             <Button asChild className="mt-6" size="lg">
-              <Link href="/transport">Nuestros Servicios <ArrowRight /></Link>
+              <Link href="/about">Conoce Nuestra Historia <ArrowRight /></Link>
             </Button>
           </div>
           <div className="relative h-80 md:h-[500px] rounded-lg overflow-hidden shadow-xl transform transition-transform duration-500 hover:scale-105">

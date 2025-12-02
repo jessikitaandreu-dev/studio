@@ -111,7 +111,7 @@ export default function ExcursionDetailPage({ params }: { params: { slug:string 
                   </div>
                 </div>
                 <Button size="lg" className="w-full mt-4" asChild>
-                    <Link href="/recommendations">Reservar Ahora</Link>
+                    <Link href="/contact">Reservar Ahora</Link>
                 </Button>
                  <Button size="lg" variant="outline" className="w-full" asChild>
                     <Link href="/excursions"><ArrowLeft className="mr-2"/>Ver más excursiones</Link>

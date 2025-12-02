@@ -102,7 +102,7 @@ export default function TransportPage() {
             </p>
             <div className="mt-8">
                  <Button size="lg" asChild>
-                    <Link href="/recommendations#contact">Solicitar Presupuesto</Link>
+                    <Link href="/contact">Solicitar Presupuesto</Link>
                 </Button>
             </div>
         </div>
