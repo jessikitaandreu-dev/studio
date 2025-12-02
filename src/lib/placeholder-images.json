@@ -31,10 +31,10 @@
       "imageHint": "canyoning adventure"
     },
     {
-      "id": "food-tour-singles",
-      "description": "A group of young adults laughing and sharing tapas at an outdoor market.",
-      "imageUrl": "https://images.unsplash.com/photo-1748282639768-e74e17bd729d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzaGFyaW5nJTIwdGFwYXN8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib-rb-4.1.0&q=80&w=1080",
-      "imageHint": "sharing tapas"
+      "id": "cultural-getaway-singles",
+      "description": "Un grupo de amigos brindando con vino frente al Coliseo en Roma.",
+      "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmcmllbmRzJTIwdG9hc3RpbmclMjBSb21lfGVufDB8fHx8MTc2NDc5NDgwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "friends Rome"
     },
     {
       "id": "singles-boat-party",
@@ -51,13 +51,13 @@
     {
       "id": "pirate-treasure-hunt",
       "description": "Children dressed as pirates digging for treasure on a sandy beach.",
-      "imageUrl": "https://images.unsplash.com/photo-1732266496052-dd9246b72d8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGlsZHJlbiUyMHBpcmF0ZXN8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1732266496052-dd9246b72d8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGlsZHJlbiUyMHBpcmF0ZXN8ZW58MHx8fHwxNzYzNTgwNDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "children pirates"
     },
     {
       "id": "via-ferrata-sunrise",
       "description": "A climber on a via ferrata route, silhouetted against a beautiful sunrise over mountains.",
-      "imageUrl": "https://images.unsplash.com/photo-1557070372-94b160a8dfc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2aWElMjBmZXJyYXRhJTIwc3VucmlzZXxlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1557070372-94b160a8dfc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2aWElMjBmZXJyYXRhJTIwc3VucmlzZXxlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "via ferrata sunrise"
     },
     {
@@ -69,43 +69,43 @@
     {
       "id": "blog-family-adventures",
       "description": "A happy family hiking together in a sunny forest.",
-      "imageUrl": "https://images.unsplash.com/photo-1653185077828-ba7821590755?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYW1pbHklMjBoaWtpbmd8ZW58MHx8fHwxNzY0MDg1MjE4fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1653185077828-ba7821590755?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYW1pbHklMjBoaWtpbmd8ZW58MHx8fHwxNzY0MDg1MjE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "family hiking"
     },
     {
       "id": "blog-accessible-tourism",
       "description": "A person in a wheelchair enjoying a scenic viewpoint.",
-      "imageUrl": "https://images.unsplash.com/photo-1563810179488-6f3a43e967ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhY2Nlc3NpYmxlJTIwdHJhdmVsfGVufDB8fHx8MTc2NDA4NTIxOHww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1563810179488-6f3a43e967ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhY2Nlc3NpYmxlJTIwdHJhdmVsfGVufDB8fHx8MTc2NDA4NTIxOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "accessible travel"
     },
     {
       "id": "blog-pet-friendly-travel",
       "description": "A golden retriever wearing a backpack on a hiking trail.",
-      "imageUrl": "https://images.unsplash.com/photo-1543413884-807d73cb32d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2clMjBoaWtpbmd8ZW58MHx8fHwxNzY0MDg1MjE4fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1543413884-807d73cb32d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2clMjBoaWtpbmd8ZW58MHx8fHwxNzY0MDg1MjE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dog hiking"
     },
     {
       "id": "transport-modern-fleet",
       "description": "A modern tour bus on a scenic road.",
-      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0b3VyJTIwYnVzfGVufDB8fHx8MTc2Mzg0ODgwNnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0b3VyJTIwYnVzfGVufDB8fHx8MTc2Mzg0ODgwNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tour bus"
     },
     {
       "id": "transport-maximum-security",
       "description": "A professional bus driver smiling at the camera.",
-      "imageUrl": "https://images.unsplash.com/photo-1629868350812-735a39626344?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXMlMjBkcml2ZXJ8ZW58MHx8fHwxNzY0MDg1NTEyfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1629868350812-735a39626344?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXMlMjBkcml2ZXJ8ZW58MHx8fHwxNzY0MDg1NTEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "bus driver"
     },
     {
       "id": "transport-group-adapted",
       "description": "A happy group of diverse people standing in front of a tour bus, ready for an adventure.",
-      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0b3VyJTIwYnVzfGVufDB8fHx8MTc2Mzg0ODgwNnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0b3VyJTIwYnVzfGVufDB8fHx8MTc2Mzg0ODgwNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "group bus"
     },
     {
       "id": "transport-premium-service",
       "description": "The comfortable and modern interior of a tour bus with empty seats.",
-      "imageUrl": "https://images.unsplash.com/photo-1570125904243-785391a3403a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXMlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjM4NDg5MDd8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1570125904243-785391a3403a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXMlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjM4NDg5MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "bus interior"
     }
   ]
