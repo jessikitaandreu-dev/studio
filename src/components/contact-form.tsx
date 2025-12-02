@@ -1,16 +1,14 @@
 "use client";
 
-import { useFormState } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { contactAction } from '@/app/actions/contact';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Loader2, Send, CheckCircle } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
@@ -21,19 +19,9 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-type ContactState = {
-  success: boolean;
-  error: string | null;
-};
-
-const initialState: ContactState = {
-  success: false,
-  error: null,
-};
-
 export function ContactForm() {
   const { toast } = useToast();
-  const [state, formAction] = useFormState(contactAction, initialState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const form = useForm<FormValues>({
@@ -45,21 +33,33 @@ export function ContactForm() {
     },
   });
 
-  useEffect(() => {
-    if (state.error) {
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('https://formspree.io/f/manrjdgv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setShowSuccessMessage(true);
+        form.reset();
+      } else {
+        throw new Error('Error al enviar el formulario');
+      }
+    } catch (error) {
       toast({
         variant: 'destructive',
         title: 'Error al enviar el mensaje',
-        description: state.error,
+        description: 'No se pudo enviar el mensaje. Por favor, inténtalo más tarde.',
       });
+    } finally {
+      setIsSubmitting(false);
     }
-    if (state.success) {
-      setShowSuccessMessage(true);
-      form.reset();
-    }
-  }, [state, toast, form]);
-
-  const { isSubmitting } = form.formState;
+  };
 
   if (showSuccessMessage) {
     return (
@@ -73,7 +73,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(formAction)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="name"
@@ -94,7 +94,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="tu@email.com" {...field} />
+                <Input placeholder="tu@email.com" type="email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
