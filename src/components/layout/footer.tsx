@@ -29,6 +29,7 @@ export function Footer() {
               <li><Link href="/excursions" className="text-muted-foreground hover:text-primary transition-colors">Excursiones</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">Quiénes Somos</Link></li>
               <li><Link href="/transport" className="text-muted-foreground hover:text-primary transition-colors">Transporte</Link></li>
+              <li><Link href="/tracking" className="text-muted-foreground hover:text-primary transition-colors">Seguimiento</Link></li>
               <li><Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contacto</Link></li>
             </ul>

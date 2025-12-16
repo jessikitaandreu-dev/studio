@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/excursions", label: "Excursiones" },
   { href: "/about", label: "Quiénes Somos" },
   { href: "/transport", label: "Transporte" },
+  { href: "/tracking", label: "Seguimiento" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contacto" },
 ];
