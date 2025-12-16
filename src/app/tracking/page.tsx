@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 type ShipmentData = {
-  code: string;
+  tracking_code: string;
   client: string;
   origin: string;
   destination: string;
@@ -70,7 +70,7 @@ export default function TrackingPage() {
 
     try {
       const response = await fetch(
-        `https://sheetdb.io/api/v1/suyauovjcvvpa/search?code=${trackingCode}`
+        `https://sheetdb.io/api/v1/suyauovjcvvpa/search?tracking_code=${trackingCode}`
       );
       
       if (!response.ok) {
@@ -159,7 +159,7 @@ export default function TrackingPage() {
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-3">
                 <Package size={28} className="text-primary" />
-                <span>Resultados para: {shipment.code}</span>
+                <span>Resultados para: {shipment.tracking_code}</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
