@@ -71,7 +71,10 @@ export default function TrackingPage() {
         `https://sheetdb.io/api/v1/suyauovjcvvpa/search?tracking_code=${trackingCode}`
       );
       if (!response.ok) {
-        throw new Error(`Error en la solicitud: ${response.statusText}`);
+        // Instead of throwing an error, we set a user-friendly error message.
+        setError(`Error en la solicitud: ${response.status} ${response.statusText}. Por favor, inténtalo más tarde.`);
+        setIsLoading(false);
+        return;
       }
       const data: ShipmentData[] = await response.json();
 
