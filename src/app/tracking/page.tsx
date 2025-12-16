@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,35 +14,41 @@ import {
   Warehouse,
   CheckCircle,
   XCircle,
+  MapPin,
+  Flag,
 } from 'lucide-react';
 
 type ShipmentData = {
   tracking_code: string;
-  status: 'En magatzem' | 'En trànsit' | 'Lliurat';
-  estimated_delivery: string;
+  client: string;
+  origin: string;
+  destination: string;
+  status: 'finalizado' | 'en proceso' | 'viaje en curso';
   location: string;
+  eta: string;
 };
 
-const statusConfig = {
-  'En magatzem': {
+const statusConfig: { [key in ShipmentData['status']]: { progress: number; color: string; icon: React.ElementType; text: string } } = {
+  'en proceso': {
     progress: 10,
     color: 'bg-yellow-500',
     icon: Warehouse,
-    text: 'En Almacén',
+    text: 'En Proceso',
   },
-  'En trànsit': {
+  'viaje en curso': {
     progress: 50,
     color: 'bg-blue-500',
     icon: Truck,
-    text: 'En Tránsito',
+    text: 'Viaje en Curso',
   },
-  'Lliurat': {
+  'finalizado': {
     progress: 100,
     color: 'bg-green-500',
     icon: CheckCircle,
-    text: 'Entregado',
+    text: 'Finalizado',
   },
 };
+
 
 export default function TrackingPage() {
   const [trackingCode, setTrackingCode] = useState('');
@@ -65,14 +70,18 @@ export default function TrackingPage() {
       const response = await fetch(
         `https://sheetdb.io/api/v1/suyauovjcvvpa/search?tracking_code=${trackingCode}`
       );
+      if (!response.ok) {
+        throw new Error(`Error en la solicitud: ${response.statusText}`);
+      }
       const data: ShipmentData[] = await response.json();
 
       if (data.length > 0) {
         setShipment(data[0]);
       } else {
-        setError('Codi no trobat. Revisa el código e inténtalo de nuevo.');
+        setError('Código no encontrado. Revisa el código e inténtalo de nuevo.');
       }
     } catch (err) {
+      console.error(err);
       setError(
         'Error al conectar con el servicio de seguimiento. Inténtalo más tarde.'
       );
@@ -89,7 +98,7 @@ export default function TrackingPage() {
       <div className="text-center mb-12">
         <Package className="mx-auto h-16 w-16 text-primary mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold">
-          Localitza el teu enviament
+          Localiza el teu enviament
         </h1>
         <p className="mt-2 text-lg text-muted-foreground font-body">
           Introduce tu código de seguimiento para ver el estado actual de tu
@@ -106,7 +115,7 @@ export default function TrackingPage() {
             type="text"
             value={trackingCode}
             onChange={(e) => setTrackingCode(e.target.value)}
-            placeholder="Ej: ABC-123456789"
+            placeholder="Ej: Animales, Novedades, Oferta"
             className="text-center sm:text-left text-lg h-14"
             aria-label="Código de seguimiento"
           />
@@ -156,20 +165,40 @@ export default function TrackingPage() {
                   </div>
                   <Progress value={currentStatus.progress} className={currentStatus.color} />
                   <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                      <span>Almacén</span>
-                      <span>En Tránsito</span>
-                      <span>Entregado</span>
+                      <span>En Proceso</span>
+                      <span>Viaje en Curso</span>
+                      <span>Finalizado</span>
+                  </div>
+                </div>
+
+                <div className="border-t pt-4">
+                  <h3 className="font-semibold mb-2 text-muted-foreground">Cliente: {shipment.client}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                      <div className="flex items-center gap-3">
+                          <Flag className="h-5 w-5 text-muted-foreground" />
+                          <div>
+                              <p className="font-semibold">Origen</p>
+                              <p>{shipment.origin}</p>
+                          </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                          <MapPin className="h-5 w-5 text-muted-foreground" />
+                          <div>
+                              <p className="font-semibold">Destino</p>
+                              <p>{shipment.destination}</p>
+                          </div>
+                      </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-left">
                     <div className="bg-muted p-4 rounded-lg">
                         <p className="font-semibold text-sm text-muted-foreground">Ubicación Actual</p>
-                        <p className="text-lg font-bold">{shipment.location}</p>
+                        <p className="text-lg font-bold">{shipment.location || 'No disponible'}</p>
                     </div>
                      <div className="bg-muted p-4 rounded-lg">
-                        <p className="font-semibold text-sm text-muted-foreground">Entrega Estimada</p>
-                        <p className="text-lg font-bold">{shipment.estimated_delivery}</p>
+                        <p className="font-semibold text-sm text-muted-foreground">Fecha Estimada (ETA)</p>
+                        <p className="text-lg font-bold">{shipment.eta}</p>
                     </div>
                 </div>
 
