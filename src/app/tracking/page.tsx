@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 type ShipmentData = {
-  tracking_code: string;
+  code: string;
   client: string;
   origin: string;
   destination: string;
@@ -66,26 +66,32 @@ export default function TrackingPage() {
     setError(null);
     setShipment(null);
 
+    console.log("Cercant codi:", trackingCode);
+
     try {
       const response = await fetch(
-        `https://sheetdb.io/api/v1/suyauovjcvvpa/search?tracking_code=${trackingCode}`
+        `https://sheetdb.io/api/v1/suyauovjcvvpa/search?code=${trackingCode}`
       );
+      
       if (!response.ok) {
-        setError(`Error en la solicitud: ${response.status} ${response.statusText}. Por favor, inténtalo más tarde.`);
+        setError('Error connectant amb el servidor.');
         setIsLoading(false);
         return;
       }
+      
       const data: ShipmentData[] = await response.json();
+      console.log("Dades rebudes:", data);
+
 
       if (data.length > 0) {
         setShipment(data[0]);
       } else {
-        setError('Código no encontrado. Revisa el código e inténtalo de nuevo.');
+        setError('No hem trobat cap enviament amb aquest codi.');
       }
     } catch (err) {
       console.error(err);
       setError(
-        'Error al conectar con el servicio de seguimiento. Inténtalo más tarde.'
+        'Error connectant amb el servidor.'
       );
     } finally {
       setIsLoading(false);
@@ -117,7 +123,7 @@ export default function TrackingPage() {
             type="text"
             value={trackingCode}
             onChange={(e) => setTrackingCode(e.target.value)}
-            placeholder="Ej: Animales, Novedades, Oferta"
+            placeholder="Ej: COD-12345"
             className="text-center sm:text-left text-lg h-14"
             aria-label="Código de seguimiento"
           />
@@ -153,7 +159,7 @@ export default function TrackingPage() {
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-3">
                 <Package size={28} className="text-primary" />
-                <span>Resultados para: {shipment.tracking_code}</span>
+                <span>Resultados para: {shipment.code}</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
