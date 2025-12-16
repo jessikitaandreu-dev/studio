@@ -71,7 +71,6 @@ export default function TrackingPage() {
         `https://sheetdb.io/api/v1/suyauovjcvvpa/search?tracking_code=${trackingCode}`
       );
       if (!response.ok) {
-        // Instead of throwing an error, we set a user-friendly error message.
         setError(`Error en la solicitud: ${response.status} ${response.statusText}. Por favor, inténtalo más tarde.`);
         setIsLoading(false);
         return;
