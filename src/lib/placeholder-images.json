@@ -31,10 +31,10 @@
       "imageHint": "canyoning adventure"
     },
     {
-      "id": "gastronomic-route-singles",
-      "description": "A group of friends laughing and sharing tapas in a vibrant Spanish bar.",
-      "imageUrl": "https://images.unsplash.com/photo-1582735742623-74a49ed71790?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncm91cCUyMG9mJTIwZnJpZW5kcyUyMGVhdGluZyUyMHRhcGFzfGVufDB8fHx8MTc2Mzc3NjY0MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "friends tapas"
+      "id": "cultural-getaway-singles",
+      "description": "Collage of famous European landmarks.",
+      "imageUrl": "/europa.jpg",
+      "imageHint": "europa landmarks"
     },
     {
       "id": "singles-boat-party",
@@ -107,6 +107,12 @@
       "description": "The comfortable and modern interior of a tour bus with empty seats.",
       "imageUrl": "https://images.unsplash.com/photo-1570125904243-785391a3403a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXMlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjM4NDg5MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "bus interior"
+    },
+    {
+      "id": "europa",
+      "description": "Collage of famous European landmarks.",
+      "imageUrl": "/europa.jpg",
+      "imageHint": "europa landmarks"
     }
   ]
 }

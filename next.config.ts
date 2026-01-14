@@ -35,7 +35,7 @@ const nextConfig: NextConfig = {
         hostname: 'happyguau.es',
         port: '',
         pathname: '/**',
-      }
+      },
     ],
   },
   typescript: {
@@ -50,3 +50,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+    
