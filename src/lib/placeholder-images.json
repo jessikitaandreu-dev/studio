@@ -8,9 +8,9 @@
     },
     {
       "id": "about-us",
-      "description": "A group of happy hikers celebrating on a mountain peak.",
-      "imageUrl": "https://images.unsplash.com/photo-1698905927245-1bccf179b169?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGhpa2Vyc3xlbnwwfHx8fDE3NjM1ODA0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "happy hikers"
+      "description": "Un mapa del mundo para representar los viajes.",
+      "imageUrl": "/mundo.jpg",
+      "imageHint": "world map"
     },
     {
       "id": "transport-hero",
