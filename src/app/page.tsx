@@ -107,7 +107,7 @@ export default function Home() {
       <section id="about" className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="prose prose-lg max-w-none text-foreground font-body">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Todos tenemos derecho a disfrutar</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Todos tenemos derecho a disfrutar</h2>
             <p className="lead text-muted-foreground">
               Nacimos de la pasión por descubrir el mundo y conectar con la naturaleza. En Todos tenemos derecho a disfrutar, creemos que cada viaje es una oportunidad para crear recuerdos imborrables.
             </p>
