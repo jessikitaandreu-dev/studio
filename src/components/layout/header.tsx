@@ -42,8 +42,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
             <Mountain className="h-8 w-8 text-primary" />
             <span className={cn(
-              "text-xl font-bold font-headline transition-colors", 
-              isScrolled ? "text-foreground" : "text-white md:text-foreground"
+              "text-xl font-bold font-headline transition-colors text-foreground"
             )}>
               Todos tenemos derecho a disfrutar
             </span>
@@ -55,8 +54,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                    "font-medium transition-colors hover:text-primary px-3 py-2 rounded-md text-sm",
-                    isScrolled ? "text-foreground" : "text-white"
+                    "font-medium transition-colors hover:text-primary px-3 py-2 rounded-md text-sm text-foreground"
                 )}
               >
                 {link.label}
@@ -68,7 +66,7 @@ export function Header() {
             <div className="md:hidden">
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-foreground" : "text-white", "hover:bg-white/10")}>
+                  <Button variant="ghost" size="icon" className={cn("text-foreground", "hover:bg-white/10")}>
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Abrir menú</span>
                   </Button>
