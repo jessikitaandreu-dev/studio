@@ -12,7 +12,7 @@ import { Loader2, LogIn, TriangleAlert } from 'lucide-react';
 
 export default function LoginPage() {
   const [usuari, setUsuari] = useState('');
-  const [contrasenya, setContrasenya] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -22,7 +22,7 @@ export default function LoginPage() {
     setIsLoading(true);
     setError(null);
 
-    if (!usuari || !contrasenya) {
+    if (!usuari || !password) {
       setError('El usuario y la contraseña son obligatorios.');
       setIsLoading(false);
       return;
@@ -30,7 +30,7 @@ export default function LoginPage() {
 
     try {
       const response = await fetch(
-        `https://sheetdb.io/api/v1/suyauovjcvvpa/search?sheet=usuaris&usuari=${encodeURIComponent(usuari)}&contrasenya=${encodeURIComponent(contrasenya)}`
+        `https://sheetdb.io/api/v1/suyauovjcvvpa/search?sheet=usuaris&usuari=${encodeURIComponent(usuari)}&password=${encodeURIComponent(password)}`
       );
 
       if (!response.ok) {
@@ -78,13 +78,13 @@ export default function LoginPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="contrasenya">Contrasenya</Label>
+              <Label htmlFor="password">Contrasenya</Label>
               <Input
-                id="contrasenya"
+                id="password"
                 type="password"
                 placeholder="La teva contrasenya"
-                value={contrasenya}
-                onChange={(e) => setContrasenya(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 className="h-12 text-base"
               />
