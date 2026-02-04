@@ -144,11 +144,18 @@ export default function DocumentsPage() {
       }
     });
 
-    const companyData = users.find(u => u.rol && ['admin', 'administrador', 'treballador'].includes(u.rol.trim().toLowerCase()));
+    const myCompanyData: UserData = {
+        usuari: 'aventura-aqui',
+        rol: 'admin',
+        empresa: 'Aventura-Aquí',
+        fiscalid: 'B12345678',
+        adreca: 'Calle de la Aventura, 123\n28080, Madrid, España',
+        telefon: '+34 912 345 678'
+    };
 
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
-      const clientData = users.find(u => u.usuari === firstLine.usuari);
+      const clientData = users.find(u => u.usuari?.trim() === firstLine.usuari?.trim());
 
       const processedLines = lines.map(line => {
         const unitPrice = parseNumeric(line.preu_unitari);
@@ -185,7 +192,7 @@ export default function DocumentsPage() {
         date: firstLine.data,
         paymentMethod: firstLine.fpagament,
         client: clientData || { usuari: firstLine.usuari, rol: 'client', empresa: 'Client no trobat', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
-        company: companyData || { usuari: 'admin', rol: 'admin', empresa: 'Empresa no configurada', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
+        company: myCompanyData,
         lines: processedLines,
         totals: {
           baseTotal,
@@ -268,7 +275,7 @@ export default function DocumentsPage() {
           <header className="grid grid-cols-2 gap-8 mb-12 border-b pb-8">
             <div>
               <h2 className="text-2xl font-bold text-primary">{selectedInvoice.company.empresa}</h2>
-              <p className="text-muted-foreground">{selectedInvoice.company.adreca}</p>
+              <p className="text-muted-foreground whitespace-pre-line">{selectedInvoice.company.adreca}</p>
               <p className="text-muted-foreground">ID Fiscal: {selectedInvoice.company.fiscalid}</p>
             </div>
             <div className="text-right">
@@ -347,7 +354,7 @@ export default function DocumentsPage() {
 
           <footer className="text-xs text-muted-foreground text-center border-t pt-4">
             <p>{selectedInvoice.company.empresa} - {selectedInvoice.company.adreca}</p>
-            <p>Inscrita en el Registre Mercantil de [Ciutat], Tom [Número], Foli [Número], Full [Número], Inscripció [Número].</p>
+            <p>Inscrita en el Registre Mercantil de Madrid, Tom [Número], Foli [Número], Full [Número], Inscripció [Número].</p>
             <p className="mt-2">De conformitat amb el que estableix el Reglament (UE) 2016/679 del Parlament Europeu i del Consell, de 27 d'abril de 2016, les seves dades seran tractades sota la responsabilitat de {selectedInvoice.company.empresa} amb la finalitat de gestionar la nostra relació comercial.</p>
           </footer>
         </Card>
@@ -408,4 +415,5 @@ export default function DocumentsPage() {
   );
 }
 
+    
     
