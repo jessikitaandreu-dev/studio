@@ -44,6 +44,7 @@ export default function LoginPage() {
         // Guardar dades a localStorage
         localStorage.setItem('user_nom', user.nom);
         localStorage.setItem('user_empresa', user.empresa);
+        localStorage.setItem('user_usuari', usuari);
         // Redirigir al dashboard
         router.push('/dashboard');
       } else {
