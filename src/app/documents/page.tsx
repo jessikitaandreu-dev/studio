@@ -7,8 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Loader2, Printer, ArrowLeft, FileText, TriangleAlert, Building, User, Phone, Mail, Mountain } from 'lucide-react';
+import { Loader2, Printer, ArrowLeft, FileText, TriangleAlert, Building, User, Phone, Mail } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Logo } from '@/components/logo';
 
 // --- TIPOS DE DATOS ---
 type DocumentLine = {
@@ -275,7 +276,7 @@ export default function DocumentsPage() {
           <header className="grid grid-cols-2 gap-8 mb-12 border-b pb-8">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <Mountain className="h-10 w-10 text-primary" />
+                <Logo showText={false} disableLink={true} iconClassName="h-10 w-10" />
                 <h2 className="text-2xl font-bold text-primary">{selectedInvoice.company.empresa}</h2>
               </div>
               <p className="text-muted-foreground whitespace-pre-line">{selectedInvoice.company.adreca}</p>

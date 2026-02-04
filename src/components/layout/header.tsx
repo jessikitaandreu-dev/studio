@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useState, useEffect } from 'react';
-import { Menu, X, Mountain } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 
 const navLinks = [
   { href: "/excursions", label: "Excursiones" },
@@ -39,14 +40,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-            <Mountain className="h-8 w-8 text-primary" />
-            <span className={cn(
-              "text-xl font-bold font-headline transition-colors text-foreground"
-            )}>
-              Aventura-Aquí
-            </span>
-          </Link>
+          <Logo onClick={() => setIsMobileMenuOpen(false)} />
 
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
@@ -74,12 +68,7 @@ export function Header() {
                 <SheetContent side="right" className="w-full bg-background p-0">
                   <div className="flex flex-col h-full">
                       <div className="flex justify-between items-center p-6 border-b">
-                          <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                              <Mountain className="h-8 w-8 text-primary" />
-                              <span className="text-lg font-bold font-headline text-foreground">
-                                  Aventura-Aquí
-                              </span>
-                          </Link>
+                          <Logo onClick={() => setIsMobileMenuOpen(false)} textClassName="text-lg" />
                           <SheetTrigger asChild>
                               <Button variant="ghost" size="icon">
                                   <X className="h-6 w-6" />
