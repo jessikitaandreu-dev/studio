@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Nuestras Excursiones',
-  description: 'Explora todas las categorías de aventuras que Todos tenemos derecho a disfrutar tiene para ofrecer.',
+  description: 'Explora todas las categorías de aventuras que Aventura-Aquí tiene para ofrecer.',
 };
 
 export default function ExcursionsPage() {

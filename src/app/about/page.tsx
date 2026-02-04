@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Quiénes Somos',
-  description: 'Conoce la historia y la misión de "Todos tenemos derecho a disfrutar". Descubre nuestra pasión por las aventuras y el compromiso con nuestros clientes.',
+  description: 'Conoce la historia y la misión de "Aventura-Aquí". Descubre nuestra pasión por las aventuras y el compromiso con nuestros clientes.',
 };
 
 const values = [
@@ -42,7 +42,7 @@ export default function AboutPage() {
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
-            alt="Equipo de Todos tenemos derecho a disfrutar"
+            alt="Equipo de Aventura-Aquí"
             fill
             priority
             className="object-cover brightness-50"
@@ -54,7 +54,7 @@ export default function AboutPage() {
             Nuestra Pasión es Tu Aventura
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto font-body">
-            Conoce la historia detrás de "Todos tenemos derecho a disfrutar" y por qué amamos lo que hacemos.
+            Conoce la historia detrás de "Aventura-Aquí" y por qué amamos lo que hacemos.
           </p>
         </div>
       </section>
@@ -64,7 +64,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto prose prose-lg lg:prose-xl text-center">
              <h2 className="text-3xl md:text-4xl font-bold">Nuestra Misión</h2>
              <p className="text-muted-foreground font-body text-lg">
-                Nacimos de la pasión por descubrir el mundo y creemos que nadie debería quedarse atrás. En <strong>Todos tenemos derecho a disfrutar</strong>, nuestra misión destacada es crear aventuras inolvidables que puedas compartir con tus compañeros más fieles: tus animales. Diseñamos excursiones y viajes donde tus mascotas no solo son bienvenidas, sino que son las protagonistas. ¡Porque la aventura es mejor en compañía!
+                Nacimos de la pasión por descubrir el mundo y creemos que nadie debería quedarse atrás. En <strong>Aventura-Aquí</strong>, nuestra misión destacada es crear aventuras inolvidables que puedas compartir con tus compañeros más fieles: tus animales. Diseñamos excursiones y viajes donde tus mascotas no solo son bienvenidas, sino que son las protagonistas. ¡Porque la aventura es mejor en compañía!
              </p>
           </div>
 

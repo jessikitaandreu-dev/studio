@@ -19,7 +19,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Mountain className="h-8 w-8 text-primary" />
-              <span className="text-xl font-headline font-bold">Todos tenemos derecho a disfrutar</span>
+              <span className="text-xl font-headline font-bold">Aventura-Aquí</span>
             </Link>
             <p className="font-body text-sm text-muted-foreground">Aventuras que recordarás toda la vida.</p>
           </div>
@@ -52,7 +52,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Todos tenemos derecho a disfrutar. Todos los derechos reservados.</p>
+          <p>&copy; {currentYear} Aventura-Aquí. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

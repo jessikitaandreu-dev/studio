@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     imageId: 'blog-accessible-tourism',
     content: `
       <p>El concepto de "turismo para todos" está ganando cada vez más fuerza. Afortunadamente, la industria turística está empezando a comprender la importancia de la accesibilidad, no solo como una obligación moral, sino como una oportunidad de mercado.</p>
-      <p class="mt-4">En <strong>Todos tenemos derecho a disfrutar</strong>, estamos comprometidos con esta causa. Colaboramos estrechamente con proveedores que garantizan infraestructuras y servicios adaptados. Desde hoteles con habitaciones accesibles hasta excursiones con vehículos especiales como las sillas Joelette, nuestro objetivo es que nadie se quede sin la oportunidad de explorar.</p>
+      <p class="mt-4">En <strong>Aventura-Aquí</strong>, estamos comprometidos con esta causa. Colaboramos estrechamente con proveedores que garantizan infraestructuras y servicios adaptados. Desde hoteles con habitaciones accesibles hasta excursiones con vehículos especiales como las sillas Joelette, nuestro objetivo es que nadie se quede sin la oportunidad de explorar.</p>
       <p class="mt-4">Planificar un viaje accesible requiere una investigación más exhaustiva, pero el resultado merece la pena. Es fundamental verificar la información sobre accesibilidad de antemano, contactar directamente con los proveedores y no tener miedo a preguntar. Cada vez más destinos, como museos, parques naturales y playas, están mejorando sus instalaciones para acoger a visitantes con todo tipo de necesidades.</p>
     `
   },

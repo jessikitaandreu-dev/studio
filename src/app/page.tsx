@@ -38,7 +38,7 @@ export default function Home() {
                   Tu Aventura Comienza Aquí
               </h1>
               <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto font-body">
-                  Explora destinos increíbles con Todos tenemos derecho a disfrutar. Excursiones únicas diseñadas para cada tipo de aventurero.
+                  Explora destinos increíbles con Aventura-Aquí. Excursiones únicas diseñadas para cada tipo de aventurero.
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-600">
                   <Button asChild size="lg" className="font-bold">
@@ -107,9 +107,9 @@ export default function Home() {
       <section id="about" className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="prose prose-lg max-w-none text-foreground font-body">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Todos tenemos derecho a disfrutar</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Aventura-Aquí</h2>
             <p className="lead text-muted-foreground">
-              Nacimos de la pasión por descubrir el mundo y conectar con la naturaleza. En Todos tenemos derecho a disfrutar, creemos que cada viaje es una oportunidad para crear recuerdos imborrables.
+              Nacimos de la pasión por descubrir el mundo y conectar con la naturaleza. En Aventura-Aquí, creemos que cada viaje es una oportunidad para crear recuerdos imborrables.
             </p>
             <p className="text-muted-foreground">
               Nuestra misión es ofrecer experiencias auténticas y emocionantes, adaptadas a todos los espíritus aventureros. Desde tranquilas escapadas familiares hasta desafíos llenos de adrenalina, contamos con un equipo de guías expertos y comprometidos con la seguridad y la sostenibilidad.
@@ -122,7 +122,7 @@ export default function Home() {
             {aboutImage && (
               <Image
                 src={aboutImage.imageUrl}
-                alt="Equipo de Todos tenemos derecho a disfrutar"
+                alt="Equipo de Aventura-Aquí"
                 fill
                 className="object-cover"
                 data-ai-hint={aboutImage.imageHint}

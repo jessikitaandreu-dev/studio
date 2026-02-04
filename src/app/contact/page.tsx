@@ -29,7 +29,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-8 w-8 text-primary mt-1" />
                   <div>
-                    <p className="text-lg font-semibold">Todos tenemos derecho a disfrutar</p>
+                    <p className="text-lg font-semibold">Aventura-Aquí</p>
                     <p className="text-muted-foreground font-body">
                       Calle de la Aventura, 123
                       <br />
@@ -50,8 +50,8 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center gap-4">
                         <Mail className="h-6 w-6 text-primary" />
-                        <a href="mailto:info@todostenemosderechoadisfrutar.com" className="text-muted-foreground hover:text-primary transition-colors">
-                            info@todostenemosderechoadisfrutar.com
+                        <a href="mailto:info@aventura-aqui.com" className="text-muted-foreground hover:text-primary transition-colors">
+                            info@aventura-aqui.com
                         </a>
                     </div>
                 </div>

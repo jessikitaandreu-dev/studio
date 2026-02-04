@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -45,7 +44,7 @@ export function Header() {
             <span className={cn(
               "text-xl font-bold font-headline transition-colors text-foreground"
             )}>
-              Todos tenemos derecho a disfrutar
+              Aventura-Aquí
             </span>
           </Link>
 
@@ -78,7 +77,7 @@ export function Header() {
                           <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                               <Mountain className="h-8 w-8 text-primary" />
                               <span className="text-lg font-bold font-headline text-foreground">
-                                  Todos tenemos derecho a disfrutar
+                                  Aventura-Aquí
                               </span>
                           </Link>
                           <SheetTrigger asChild>

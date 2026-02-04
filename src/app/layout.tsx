@@ -14,10 +14,10 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Todos tenemos derecho a disfrutar',
-    template: '%s | Todos tenemos derecho a disfrutar',
+    default: 'Aventura-Aquí',
+    template: '%s | Aventura-Aquí',
   },
-  description: 'Aventuras y excursiones inolvidables para todos. ¡Descubre tu próximo destino con Todos tenemos derecho a disfrutar!',
+  description: 'Aventuras y excursiones inolvidables para todos. ¡Descubre tu próximo destino con Aventura-Aquí!',
 };
 
 export default function RootLayout({
