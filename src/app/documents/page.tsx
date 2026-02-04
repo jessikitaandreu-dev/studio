@@ -102,7 +102,7 @@ export default function DocumentsPage() {
           throw new Error("No s'han pogut verificar les teves dades d'usuari.");
         }
 
-        const isAdmin = ['admin', 'administrador', 'treballador'].includes(loggedInUser.rol);
+        const isAdmin = loggedInUser.rol && ['admin', 'administrador', 'treballador'].includes(loggedInUser.rol.toLowerCase());
         
         const filteredDocs = isAdmin 
           ? allDocs 
@@ -126,6 +126,11 @@ export default function DocumentsPage() {
     fetchData();
   }, [currentUser]);
 
+  const parseNumeric = (val: any) => {
+    if (typeof val !== 'string') return 0;
+    return parseFloat(val.replace(',', '.')) || 0;
+  };
+
   const groupAndProcessInvoices = (docs: DocumentLine[], users: UserData[]): GroupedInvoice[] => {
     const invoiceMap = new Map<string, DocumentLine[]>();
     docs.forEach(doc => {
@@ -136,16 +141,16 @@ export default function DocumentsPage() {
       }
     });
 
-    const companyData = users.find(u => ['admin', 'administrador'].includes(u.rol));
+    const companyData = users.find(u => u.rol && ['admin', 'administrador', 'treballador'].includes(u.rol.toLowerCase()));
 
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
       const clientData = users.find(u => u.usuari === firstLine.usuari);
 
       const processedLines = lines.map(line => {
-        const unitPrice = parseFloat(line.preu_unitari) || 0;
-        const units = parseFloat(line.unitats) || 0;
-        const discount = parseFloat(line.dte) || 0;
+        const unitPrice = parseNumeric(line.preu_unitari);
+        const units = parseNumeric(line.unitats);
+        const discount = parseNumeric(line.dte);
         const lineTotal = unitPrice * units;
         const netTotal = lineTotal - (lineTotal * (discount / 100));
         return {
@@ -153,7 +158,7 @@ export default function DocumentsPage() {
           unitPrice,
           units,
           discount,
-          vatRate: parseFloat(line.iva) || 0,
+          vatRate: parseNumeric(line.iva),
           netTotal,
         };
       });
@@ -176,7 +181,7 @@ export default function DocumentsPage() {
         invoiceNumber,
         date: firstLine.data,
         paymentMethod: firstLine.fpagament,
-        client: clientData || { usuari: firstLine.usuari, rol: 'client', empresa: 'N/A', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
+        client: clientData || { usuari: firstLine.usuari, rol: 'client', empresa: 'Client no trobat', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
         company: companyData || { usuari: 'admin', rol: 'admin', empresa: 'Empresa no configurada', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
         lines: processedLines,
         totals: {
@@ -192,6 +197,24 @@ export default function DocumentsPage() {
   const handlePrint = () => {
     window.print();
   };
+
+  const formatDate = (dateStr: string, options: Intl.DateTimeFormatOptions = {}): string => {
+    if (!dateStr) return 'N/A';
+    
+    let date: Date;
+    const parts = dateStr.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})$/);
+    if (parts) {
+      date = new Date(parseInt(parts[3]), parseInt(parts[2]) - 1, parseInt(parts[1]));
+    } else {
+      date = new Date(dateStr);
+    }
+    
+    if (isNaN(date.getTime())) {
+      return 'Data invàlida';
+    }
+    
+    return date.toLocaleDateString('ca-ES', options);
+  }
 
   // --- RENDERIZADO ---
 
@@ -251,7 +274,7 @@ export default function DocumentsPage() {
                 <span className="font-semibold">Nº Factura:</span> {selectedInvoice.invoiceNumber}
               </p>
               <p>
-                <span className="font-semibold">Data:</span> {new Date(selectedInvoice.date).toLocaleDateString('ca-ES')}
+                <span className="font-semibold">Data:</span> {formatDate(selectedInvoice.date, { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
             </div>
           </header>
@@ -357,7 +380,7 @@ export default function DocumentsPage() {
                 invoices.map(invoice => (
                   <TableRow key={invoice.invoiceNumber}>
                     <TableCell className="font-medium">{invoice.invoiceNumber}</TableCell>
-                    <TableCell>{new Date(invoice.date).toLocaleDateString('ca-ES')}</TableCell>
+                    <TableCell>{formatDate(invoice.date)}</TableCell>
                     <TableCell>{invoice.client.empresa || invoice.client.usuari}</TableCell>
                     <TableCell className="text-right font-semibold">{invoice.totals.grandTotal.toFixed(2)} €</TableCell>
                     <TableCell className="text-right">
