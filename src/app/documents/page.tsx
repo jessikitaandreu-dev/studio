@@ -136,11 +136,11 @@ export default function DocumentsPage() {
       }
     });
 
-    const companyData = users.find(u => ['admin', 'administrador'].includes(u.rol))!;
+    const companyData = users.find(u => ['admin', 'administrador'].includes(u.rol));
 
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
-      const clientData = users.find(u => u.usuari === firstLine.usuari)!;
+      const clientData = users.find(u => u.usuari === firstLine.usuari);
 
       const processedLines = lines.map(line => {
         const unitPrice = parseFloat(line.preu_unitari) || 0;
@@ -176,8 +176,8 @@ export default function DocumentsPage() {
         invoiceNumber,
         date: firstLine.data,
         paymentMethod: firstLine.fpagament,
-        client: clientData,
-        company: companyData,
+        client: clientData || { usuari: firstLine.usuari, rol: 'client', empresa: 'N/A', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
+        company: companyData || { usuari: 'admin', rol: 'admin', empresa: 'Empresa no configurada', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
         lines: processedLines,
         totals: {
           baseTotal,
