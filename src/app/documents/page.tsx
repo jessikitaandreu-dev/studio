@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Loader2, Printer, ArrowLeft, FileText, TriangleAlert, Building, User, Phone, Mail } from 'lucide-react';
+import { Loader2, Printer, ArrowLeft, FileText, TriangleAlert, Building, User, Phone, Mail, Mountain } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
 // --- TIPOS DE DATOS ---
@@ -98,7 +98,7 @@ export default function DocumentsPage() {
         const allUsers: UserData[] = await usersRes.json();
         const allDocs: DocumentLine[] = await docsRes.json();
 
-        const loggedInUser = allUsers.find(u => u.usuari === currentUser);
+        const loggedInUser = allUsers.find(u => u.usuari?.trim() === currentUser.trim());
         if (!loggedInUser) {
           throw new Error("No s'han pogut verificar les teves dades d'usuari.");
         }
@@ -274,7 +274,10 @@ export default function DocumentsPage() {
         <Card id="zona-factura" className="max-w-4xl mx-auto p-4 sm:p-8 md:p-12 shadow-2xl bg-background">
           <header className="grid grid-cols-2 gap-8 mb-12 border-b pb-8">
             <div>
-              <h2 className="text-2xl font-bold text-primary">{selectedInvoice.company.empresa}</h2>
+              <div className="flex items-center gap-3 mb-2">
+                <Mountain className="h-10 w-10 text-primary" />
+                <h2 className="text-2xl font-bold text-primary">{selectedInvoice.company.empresa}</h2>
+              </div>
               <p className="text-muted-foreground whitespace-pre-line">{selectedInvoice.company.adreca}</p>
               <p className="text-muted-foreground">ID Fiscal: {selectedInvoice.company.fiscalid}</p>
             </div>
@@ -416,4 +419,6 @@ export default function DocumentsPage() {
 }
 
     
+    
+
     
