@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -102,7 +103,7 @@ export default function DocumentsPage() {
           throw new Error("No s'han pogut verificar les teves dades d'usuari.");
         }
 
-        const isAdmin = loggedInUser.rol && ['admin', 'administrador', 'treballador'].includes(loggedInUser.rol.toLowerCase());
+        const isAdmin = loggedInUser.rol && ['admin', 'administrador', 'treballador'].includes(loggedInUser.rol.trim().toLowerCase());
         
         const filteredDocs = isAdmin 
           ? allDocs 
@@ -126,9 +127,11 @@ export default function DocumentsPage() {
     fetchData();
   }, [currentUser]);
 
-  const parseNumeric = (val: any) => {
+  const parseNumeric = (val: any): number => {
+    if (typeof val === 'number') return val;
     if (typeof val !== 'string') return 0;
-    return parseFloat(val.replace(',', '.')) || 0;
+    const cleanedVal = val.replace(/[^0-9,.-]/g, '').replace(/\./g, '').replace(',', '.');
+    return parseFloat(cleanedVal) || 0;
   };
 
   const groupAndProcessInvoices = (docs: DocumentLine[], users: UserData[]): GroupedInvoice[] => {
@@ -141,7 +144,7 @@ export default function DocumentsPage() {
       }
     });
 
-    const companyData = users.find(u => u.rol && ['admin', 'administrador', 'treballador'].includes(u.rol.toLowerCase()));
+    const companyData = users.find(u => u.rol && ['admin', 'administrador', 'treballador'].includes(u.rol.trim().toLowerCase()));
 
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
@@ -404,3 +407,5 @@ export default function DocumentsPage() {
     </div>
   );
 }
+
+    
