@@ -14,7 +14,7 @@ type LogoProps = {
 export function Logo({ className, textClassName, iconClassName, showText = true, onClick, disableLink = false }: LogoProps) {
   const logoContent = (
     <>
-      <Image src="/LOGOAA.png" alt="Aventura-Aquí Logo" width={32} height={32} className={cn(iconClassName)} />
+      <Image src="/LOGOAA.png" alt="Aventura-Aquí Logo" width={40} height={40} className={cn(iconClassName)} />
       {showText && (
         <span className={cn("text-xl font-bold font-headline transition-colors text-foreground", textClassName)}>
           Aventura-Aquí
