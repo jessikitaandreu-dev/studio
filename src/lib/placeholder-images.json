@@ -8,9 +8,9 @@
     },
     {
       "id": "about-us",
-      "description": "Un mapa del mundo para representar los viajes.",
-      "imageUrl": "/mundo.jpg",
-      "imageHint": "world map"
+      "description": "Logo de Aventura-Aquí",
+      "imageUrl": "/LOGOAA.png",
+      "imageHint": "company logo"
     },
     {
       "id": "transport-hero",

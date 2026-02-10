@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     template: '%s | Aventura-Aquí',
   },
   description: 'Aventuras y excursiones inolvidables para todos. ¡Descubre tu próximo destino con Aventura-Aquí!',
+  icons: {
+    icon: '/LOGOAA.png',
+  },
 };
 
 export default function RootLayout({
