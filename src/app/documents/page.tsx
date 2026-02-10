@@ -99,7 +99,8 @@ export default function DocumentsPage() {
         const allUsers: UserData[] = await usersRes.json();
         const allDocs: DocumentLine[] = await docsRes.json();
 
-        const loggedInUser = allUsers.find(u => u.usuari?.trim() === currentUser.trim());
+        const loggedInUser = allUsers.find(u => u.usuari?.trim().toLowerCase() === currentUser.trim().toLowerCase());
+        
         if (!loggedInUser) {
           throw new Error("No s'han pogut verificar les teves dades d'usuari.");
         }
@@ -108,7 +109,7 @@ export default function DocumentsPage() {
         
         const filteredDocs = isAdmin 
           ? allDocs 
-          : allDocs.filter(doc => doc.usuari === currentUser);
+          : allDocs.filter(doc => doc.usuari?.trim().toLowerCase() === currentUser.trim().toLowerCase());
 
         if (filteredDocs.length === 0) {
           setInvoices([]);
@@ -156,7 +157,7 @@ export default function DocumentsPage() {
 
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
-      const clientData = users.find(u => u.usuari?.trim() === firstLine.usuari?.trim());
+      const clientData = users.find(u => u.usuari?.trim().toLowerCase() === firstLine.usuari?.trim().toLowerCase());
 
       const processedLines = lines.map(line => {
         const unitPrice = parseNumeric(line.preu_unitari);
@@ -418,8 +419,3 @@ export default function DocumentsPage() {
     </div>
   );
 }
-
-    
-    
-
-    
