@@ -1,4 +1,3 @@
-import { Mountain } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -15,16 +14,7 @@ type LogoProps = {
 export function Logo({ className, textClassName, iconClassName, showText = true, onClick, disableLink = false }: LogoProps) {
   const logoContent = (
     <>
-      {/* 
-        Para usar tu propio logo:
-        1. Sube tu archivo de logo (ej. logo.svg) a la carpeta `public`.
-        2. Comenta o elimina la línea de <Mountain /> de abajo.
-        3. Descomenta la línea del componente <Image />.
-        4. Ajusta `width` y `height` a las dimensiones de tu logo.
-        
-        <Image src="/logo.svg" alt="Aventura-Aquí Logo" width={32} height={32} />
-      */}
-      <Mountain className={cn("h-8 w-8 text-primary", iconClassName)} />
+      <Image src="/mundo.jpg" alt="Aventura-Aquí Logo" width={32} height={32} className={cn("rounded-full", iconClassName)} />
       {showText && (
         <span className={cn("text-xl font-bold font-headline transition-colors text-foreground", textClassName)}>
           Aventura-Aquí
