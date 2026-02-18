@@ -7,9 +7,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Loader2, Printer, ArrowLeft, FileText, TriangleAlert, Building, User, Phone, Mail } from 'lucide-react';
+import { Loader2, Printer, ArrowLeft, FileText, TriangleAlert, Building, User, Phone, Mail, CheckCircle, XCircle } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Logo } from '@/components/logo';
+import { Badge } from '@/components/ui/badge';
 
 // --- TIPOS DE DATOS ---
 type DocumentLine = {
@@ -23,6 +24,7 @@ type DocumentLine = {
   iva: string;
   dte: string;
   albara: string;
+  estat?: string;
 };
 
 type UserData = {
@@ -38,6 +40,7 @@ type GroupedInvoice = {
   invoiceNumber: string;
   date: string;
   paymentMethod: string;
+  status: string;
   client: UserData;
   company: UserData;
   lines: {
@@ -158,6 +161,7 @@ export default function DocumentsPage() {
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
       const clientData = users.find(u => u.usuari?.trim().toLowerCase() === firstLine.usuari?.trim().toLowerCase());
+      const status = firstLine.estat || 'Pendent';
 
       const processedLines = lines.map(line => {
         const unitPrice = parseNumeric(line.preu_unitari);
@@ -193,6 +197,7 @@ export default function DocumentsPage() {
         invoiceNumber,
         date: firstLine.data,
         paymentMethod: firstLine.fpagament,
+        status: status,
         client: clientData || { usuari: firstLine.usuari, rol: 'client', empresa: 'Client no trobat', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
         company: myCompanyData,
         lines: processedLines,
@@ -291,6 +296,17 @@ export default function DocumentsPage() {
               <p>
                 <span className="font-semibold">Data:</span> {formatDate(selectedInvoice.date, { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
+              {selectedInvoice.status.trim().toLowerCase() === 'pagado' ? (
+                <Badge variant="default" className="mt-2 bg-green-600 hover:bg-green-700">
+                    <CheckCircle className="mr-2 h-4 w-4" />
+                    Pagat
+                </Badge>
+                ) : (
+                <Badge variant="destructive" className="mt-2">
+                    <XCircle className="mr-2 h-4 w-4" />
+                    Pendent de Pagament
+                </Badge>
+                )}
             </div>
           </header>
 
@@ -383,6 +399,7 @@ export default function DocumentsPage() {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHead>Estat</TableHead>
                 <TableHead>Nº Factura</TableHead>
                 <TableHead>Data</TableHead>
                 <TableHead>Client</TableHead>
@@ -394,6 +411,19 @@ export default function DocumentsPage() {
               {invoices.length > 0 ? (
                 invoices.map(invoice => (
                   <TableRow key={invoice.invoiceNumber}>
+                    <TableCell>
+                      {invoice.status.trim().toLowerCase() === 'pagado' ? (
+                        <div className="flex items-center gap-2 font-medium text-green-600">
+                          <CheckCircle className="h-5 w-5" />
+                          <span className="hidden sm:inline">Pagat</span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2 font-medium text-red-600">
+                          <XCircle className="h-5 w-5" />
+                          <span className="hidden sm:inline">Pendent</span>
+                        </div>
+                      )}
+                    </TableCell>
                     <TableCell className="font-medium">{invoice.invoiceNumber}</TableCell>
                     <TableCell>{formatDate(invoice.date)}</TableCell>
                     <TableCell>{invoice.client.empresa || invoice.client.usuari}</TableCell>
@@ -407,7 +437,7 @@ export default function DocumentsPage() {
                 ))
               ) : (
                 <TableRow>
-                  <TableCell colSpan={5} className="text-center h-24">
+                  <TableCell colSpan={6} className="text-center h-24">
                     No s'han trobat factures.
                   </TableCell>
                 </TableRow>
@@ -419,3 +449,5 @@ export default function DocumentsPage() {
     </div>
   );
 }
+
+    
