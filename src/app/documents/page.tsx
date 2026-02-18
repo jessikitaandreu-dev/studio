@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -161,7 +160,7 @@ export default function DocumentsPage() {
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
       const clientData = users.find(u => u.usuari?.trim().toLowerCase() === firstLine.usuari?.trim().toLowerCase());
-      const status = firstLine.estat || 'Pendent';
+      const status = firstLine.estat || 'No pagat';
 
       const processedLines = lines.map(line => {
         const unitPrice = parseNumeric(line.preu_unitari);
@@ -296,7 +295,7 @@ export default function DocumentsPage() {
               <p>
                 <span className="font-semibold">Data:</span> {formatDate(selectedInvoice.date, { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
-              {selectedInvoice.status.trim().toLowerCase() === 'pagado' ? (
+              {selectedInvoice.status.trim().toLowerCase() === 'pagat' ? (
                 <Badge variant="default" className="mt-2 bg-green-600 hover:bg-green-700">
                     <CheckCircle className="mr-2 h-4 w-4" />
                     Pagat
@@ -304,7 +303,7 @@ export default function DocumentsPage() {
                 ) : (
                 <Badge variant="destructive" className="mt-2">
                     <XCircle className="mr-2 h-4 w-4" />
-                    Pendent de Pagament
+                    No pagat
                 </Badge>
                 )}
             </div>
@@ -412,7 +411,7 @@ export default function DocumentsPage() {
                 invoices.map(invoice => (
                   <TableRow key={invoice.invoiceNumber}>
                     <TableCell>
-                      {invoice.status.trim().toLowerCase() === 'pagado' ? (
+                      {invoice.status.trim().toLowerCase() === 'pagat' ? (
                         <div className="flex items-center gap-2 font-medium text-green-600">
                           <CheckCircle className="h-5 w-5" />
                           <span className="hidden sm:inline">Pagat</span>
@@ -420,7 +419,7 @@ export default function DocumentsPage() {
                       ) : (
                         <div className="flex items-center gap-2 font-medium text-red-600">
                           <XCircle className="h-5 w-5" />
-                          <span className="hidden sm:inline">Pendent</span>
+                          <span className="hidden sm:inline">No pagat</span>
                         </div>
                       )}
                     </TableCell>
@@ -449,5 +448,3 @@ export default function DocumentsPage() {
     </div>
   );
 }
-
-    
