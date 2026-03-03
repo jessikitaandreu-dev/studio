@@ -1,0 +1,79 @@
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Tag, Calendar, MapPin, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+export default function OffersPage() {
+  const offerImage = PlaceHolderImages.find(p => p.id === 'cultural-getaway-singles');
+
+  const offers = [
+    {
+      title: "Escapada Familiar 2x1",
+      description: "Reserva una excursió familiar aquest mes i el segon nen va gratis.",
+      validUntil: "31 d'Octubre",
+      code: "FAMILIA24",
+    },
+    {
+      title: "Pack Aventura Total",
+      description: "Combina Canyoning i Senderisme amb un 20% de descompte.",
+      validUntil: "15 de Novembre",
+      code: "ADRENALINA20",
+    }
+  ];
+
+  return (
+    <div className="container mx-auto max-w-4xl px-4 py-16">
+      <div className="text-center mb-12">
+        <Tag className="mx-auto h-16 w-16 text-primary mb-4" />
+        <h1 className="text-4xl md:text-5xl font-bold">Ofertes Exclusives</h1>
+        <p className="mt-4 text-lg text-muted-foreground">Com a client d'Aventura-Aquí, tens accés a promocions úniques.</p>
+      </div>
+
+      <div className="grid gap-8">
+        {offers.map((offer, index) => (
+          <Card key={index} className="overflow-hidden shadow-lg border-primary/20 bg-gradient-to-r from-background to-secondary/20">
+            <div className="flex flex-col md:flex-row">
+              <div className="p-8 flex-grow">
+                <Badge variant="default" className="mb-4">OFERTA LIMITADA</Badge>
+                <CardTitle className="text-3xl mb-2">{offer.title}</CardTitle>
+                <CardDescription className="text-lg mb-6">{offer.description}</CardDescription>
+                
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-sm font-medium">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    Vàlid fins: {offer.validUntil}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-medium">
+                    <Tag className="h-4 w-4 text-primary" />
+                    Codi: <span className="bg-primary/10 px-2 py-0.5 rounded text-primary font-bold">{offer.code}</span>
+                  </div>
+                </div>
+
+                <Button size="lg" asChild>
+                  <Link href="/contact">Sol·licitar Oferta <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                </Button>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+
+      <div className="mt-16 text-center">
+        <Button variant="outline" asChild>
+          <Link href="/dashboard">Tornar al meu perfil</Link>
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function Badge({ children, className, variant = "default" }: { children: React.ReactNode, className?: string, variant?: "default" | "outline" }) {
+  return (
+    <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${variant === 'default' ? 'bg-primary text-primary-foreground' : 'border border-input'} ${className}`}>
+      {children}
+    </span>
+  );
+}
