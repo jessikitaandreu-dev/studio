@@ -66,7 +66,7 @@ export default function TrackingPage() {
     setError(null);
     setShipment(null);
 
-    console.log("Cercant codi:", trackingCode);
+    console.log("Buscando código:", trackingCode);
 
     try {
       const response = await fetch(
@@ -74,24 +74,24 @@ export default function TrackingPage() {
       );
       
       if (!response.ok) {
-        setError('Error connectant amb el servidor.');
+        setError('Error conectando con el servidor.');
         setIsLoading(false);
         return;
       }
       
       const data: ShipmentData[] = await response.json();
-      console.log("Dades rebudes:", data);
+      console.log("Datos recibidos:", data);
 
 
       if (data.length > 0) {
         setShipment(data[0]);
       } else {
-        setError('No hem trobat cap enviament amb aquest codi.');
+        setError('No hemos encontrado ningún envío con este código.');
       }
     } catch (err) {
       console.error(err);
       setError(
-        'Error connectant amb el servidor.'
+        'Error conectando con el servidor.'
       );
     } finally {
       setIsLoading(false);
@@ -106,7 +106,7 @@ export default function TrackingPage() {
       <div className="text-center mb-12">
         <Package className="mx-auto h-16 w-16 text-primary mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold">
-          Localiza el teu enviament
+          Localiza tu envío
         </h1>
         <p className="mt-2 text-lg text-muted-foreground font-body">
           Introduce tu código de seguimiento para ver el estado actual de tu
@@ -140,7 +140,7 @@ export default function TrackingPage() {
             ) : (
               <>
                 <Search className="mr-2 h-5 w-5" />
-                Cercar
+                Buscar
               </>
             )}
           </Button>

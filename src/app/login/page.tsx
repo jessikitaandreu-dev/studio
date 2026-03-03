@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -34,24 +33,24 @@ export default function LoginPage() {
       );
 
       if (!response.ok) {
-        throw new Error('Error de connexió amb el servidor.');
+        throw new Error('Error de conexión con el servidor.');
       }
 
       const data = await response.json();
 
       if (data.length > 0) {
         const user = data[0];
-        // Guardar dades a localStorage
+        // Guardar datos en localStorage
         localStorage.setItem('user_nom', user.nom);
         localStorage.setItem('user_empresa', user.empresa);
         localStorage.setItem('user_usuari', user.usuari);
         // Redirigir al dashboard
         router.push('/dashboard');
       } else {
-        setError('Dades incorrectes. Si us plau, verifica el teu usuari i contrasenya.');
+        setError('Datos incorrectos. Por favor, verifica tu usuario y contraseña.');
       }
     } catch (err) {
-      setError('Error de connexió. Si us plau, intenta-ho de nou més tard.');
+      setError('Error de conexión. Por favor, inténtalo de nuevo más tarde.');
     } finally {
       setIsLoading(false);
     }
@@ -61,17 +60,17 @@ export default function LoginPage() {
     <div className="flex items-center justify-center min-h-[calc(100vh-10rem)] bg-secondary/30 py-12 px-4">
       <Card className="w-full max-w-md shadow-2xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold">Accés d'Usuaris</CardTitle>
-          <CardDescription>Introdueix les teves dades per entrar</CardDescription>
+          <CardTitle className="text-3xl font-bold">Acceso de Usuarios</CardTitle>
+          <CardDescription>Introduce tus datos para entrar</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="usuari">Usuari</Label>
+              <Label htmlFor="usuari">Usuario</Label>
               <Input
                 id="usuari"
                 type="text"
-                placeholder="El teu usuari"
+                placeholder="Tu usuario"
                 value={usuari}
                 onChange={(e) => setUsuari(e.target.value)}
                 required
@@ -79,11 +78,11 @@ export default function LoginPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Contrasenya</Label>
+              <Label htmlFor="password">Contraseña</Label>
               <Input
                 id="password"
                 type="password"
-                placeholder="La teva contrasenya"
+                placeholder="Tu contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -94,7 +93,7 @@ export default function LoginPage() {
             {error && (
               <Alert variant="destructive">
                 <TriangleAlert className="h-4 w-4" />
-                <AlertTitle>Error d'accés</AlertTitle>
+                <AlertTitle>Error de acceso</AlertTitle>
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
@@ -103,7 +102,7 @@ export default function LoginPage() {
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Verificant...
+                  Verificando...
                 </>
               ) : (
                 <>

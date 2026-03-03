@@ -95,7 +95,7 @@ export default function DocumentsPage() {
         ]);
 
         if (!usersRes.ok || !docsRes.ok) {
-          throw new Error('Error de connexió amb el servidor.');
+          throw new Error('Error de conexión con el servidor.');
         }
 
         const allUsers: UserData[] = await usersRes.json();
@@ -104,7 +104,7 @@ export default function DocumentsPage() {
         const loggedInUser = allUsers.find(u => u.usuari?.trim().toLowerCase() === currentUser.trim().toLowerCase());
         
         if (!loggedInUser) {
-          throw new Error("No s'han pogut verificar les teves dades d'usuari.");
+          throw new Error("No se han podido verificar tus datos de usuario.");
         }
 
         const isAdmin = loggedInUser.rol && ['admin', 'administrador', 'treballador'].includes(loggedInUser.rol.trim().toLowerCase());
@@ -122,7 +122,7 @@ export default function DocumentsPage() {
         setInvoices(grouped);
 
       } catch (e: any) {
-        setError(e.message || 'Hi ha hagut un error inesperat.');
+        setError(e.message || 'Ha ocurrido un error inesperado.');
       } finally {
         setLoading(false);
       }
@@ -160,7 +160,7 @@ export default function DocumentsPage() {
     return Array.from(invoiceMap.entries()).map(([invoiceNumber, lines]) => {
       const firstLine = lines[0];
       const clientData = users.find(u => u.usuari?.trim().toLowerCase() === firstLine.usuari?.trim().toLowerCase());
-      const status = firstLine.estat || 'No pagat';
+      const status = firstLine.estat || 'No pagado';
 
       const processedLines = lines.map(line => {
         const unitPrice = parseNumeric(line.preu_unitari);
@@ -197,7 +197,7 @@ export default function DocumentsPage() {
         date: firstLine.data,
         paymentMethod: firstLine.fpagament,
         status: status,
-        client: clientData || { usuari: firstLine.usuari, rol: 'client', empresa: 'Client no trobat', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
+        client: clientData || { usuari: firstLine.usuari, rol: 'client', empresa: 'Cliente no encontrado', fiscalid: 'N/A', adreca: 'N/A', telefon: 'N/A' },
         company: myCompanyData,
         lines: processedLines,
         totals: {
@@ -226,10 +226,10 @@ export default function DocumentsPage() {
     }
     
     if (isNaN(date.getTime())) {
-      return 'Data invàlida';
+      return 'Fecha inválida';
     }
     
-    return date.toLocaleDateString('ca-ES', options);
+    return date.toLocaleDateString('es-ES', options);
   }
 
   // --- RENDERIZADO ---
@@ -270,7 +270,7 @@ export default function DocumentsPage() {
       <div className="bg-secondary/30 min-h-screen p-4 sm:p-8">
         <div className="max-w-4xl mx-auto mb-8 flex justify-between items-center print:hidden">
             <Button variant="outline" onClick={() => setSelectedInvoice(null)}>
-                <ArrowLeft className="mr-2 h-4 w-4" /> Tornar al llistat
+                <ArrowLeft className="mr-2 h-4 w-4" /> Volver al listado
             </Button>
             <Button onClick={handlePrint}>
                 <Printer className="mr-2 h-4 w-4" /> Imprimir PDF
@@ -293,17 +293,17 @@ export default function DocumentsPage() {
                 <span className="font-semibold">Nº Factura:</span> {selectedInvoice.invoiceNumber}
               </p>
               <p>
-                <span className="font-semibold">Data:</span> {formatDate(selectedInvoice.date, { year: 'numeric', month: 'long', day: 'numeric' })}
+                <span className="font-semibold">Fecha:</span> {formatDate(selectedInvoice.date, { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
-              {selectedInvoice.status.trim().toLowerCase() === 'pagat' ? (
+              {selectedInvoice.status.trim().toLowerCase() === 'pagat' || selectedInvoice.status.trim().toLowerCase() === 'pagado' ? (
                 <Badge variant="default" className="mt-2 bg-green-600 hover:bg-green-700">
                     <CheckCircle className="mr-2 h-4 w-4" />
-                    Pagat
+                    Pagado
                 </Badge>
                 ) : (
                 <Badge variant="destructive" className="mt-2">
                     <XCircle className="mr-2 h-4 w-4" />
-                    No pagat
+                    No pagado
                 </Badge>
                 )}
             </div>
@@ -312,13 +312,13 @@ export default function DocumentsPage() {
           <section className="grid md:grid-cols-2 gap-8 mb-12">
              <Card className="p-4 bg-secondary/30">
                 <CardHeader className="p-2">
-                    <CardTitle className="text-sm uppercase text-muted-foreground tracking-wider">Client</CardTitle>
+                    <CardTitle className="text-sm uppercase text-muted-foreground tracking-wider">Cliente</CardTitle>
                 </CardHeader>
                 <CardContent className="p-2">
                     <p className="font-bold text-lg">{selectedInvoice.client.empresa || selectedInvoice.client.usuari}</p>
                     <p className="text-muted-foreground">{selectedInvoice.client.adreca}</p>
                     <p className="text-muted-foreground">ID Fiscal: {selectedInvoice.client.fiscalid}</p>
-                    <p className="text-muted-foreground">Telèfon: {selectedInvoice.client.telefon}</p>
+                    <p className="text-muted-foreground">Teléfono: {selectedInvoice.client.telefon}</p>
                 </CardContent>
             </Card>
           </section>
@@ -327,10 +327,10 @@ export default function DocumentsPage() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-1/2">Concepte</TableHead>
-                  <TableHead className="text-right">P. Unitari</TableHead>
-                  <TableHead className="text-right">Unitats</TableHead>
-                  <TableHead className="text-right">Dte. %</TableHead>
+                  <TableHead className="w-1/2">Concepto</TableHead>
+                  <TableHead className="text-right">P. Unitario</TableHead>
+                  <TableHead className="text-right">Unidades</TableHead>
+                  <TableHead className="text-right">Dto. %</TableHead>
                   <TableHead className="text-right">Total</TableHead>
                 </TableRow>
               </TableHeader>
@@ -351,7 +351,7 @@ export default function DocumentsPage() {
           <section className="flex justify-end mb-12">
               <div className="w-full max-w-sm space-y-4">
                   <div className="flex justify-between">
-                      <span className="text-muted-foreground">Base Imposable</span>
+                      <span className="text-muted-foreground">Base Imponible</span>
                       <span className="font-semibold">{selectedInvoice.totals.baseTotal.toFixed(2)} €</span>
                   </div>
                   {selectedInvoice.totals.vatBreakdown.map(vat => (
@@ -369,27 +369,27 @@ export default function DocumentsPage() {
           </section>
           
            <section className="border-t pt-8 mb-8">
-                <p><span className='font-semibold'>Forma de Pagament:</span> {selectedInvoice.paymentMethod}</p>
+                <p><span className='font-semibold'>Forma de Pago:</span> {selectedInvoice.paymentMethod}</p>
            </section>
 
           <footer className="text-xs text-muted-foreground text-center border-t pt-4">
             <p>{selectedInvoice.company.empresa} - {selectedInvoice.company.adreca}</p>
-            <p>Inscrita en el Registre Mercantil de Madrid, Tom [Número], Foli [Número], Full [Número], Inscripció [Número].</p>
-            <p className="mt-2">De conformitat amb el que estableix el Reglament (UE) 2016/679 del Parlament Europeu i del Consell, de 27 d'abril de 2016, les seves dades seran tractades sota la responsabilitat de {selectedInvoice.company.empresa} amb la finalitat de gestionar la nostra relació comercial.</p>
+            <p>Inscrita en el Registro Mercantil de Madrid, Tomo [Número], Folio [Número], Hoja [Número], Inscripción [Número].</p>
+            <p className="mt-2">De conformidad con lo establecido en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, sus datos serán tratados bajo la responsabilidad de {selectedInvoice.company.empresa} con la finalidad de gestionar nuestra relación comercial.</p>
           </footer>
         </Card>
       </div>
     );
   }
 
-  // --- VISTA DE LLISTAT DE FACTURES ---
+  // --- VISTA DE LISTADO DE FACTURAS ---
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="flex items-center gap-4 mb-8">
         <FileText className="h-10 w-10 text-primary" />
         <div>
-          <h1 className="text-3xl font-bold">Les Meves Factures</h1>
-          <p className="text-muted-foreground">Consulta, descarrega o imprimeix les teves factures.</p>
+          <h1 className="text-3xl font-bold">Mis Facturas</h1>
+          <p className="text-muted-foreground">Consulta, descarga o imprime tus facturas.</p>
         </div>
       </div>
 
@@ -398,11 +398,11 @@ export default function DocumentsPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Estat</TableHead>
+                <TableHead>Estado</TableHead>
                 <TableHead>Nº Factura</TableHead>
-                <TableHead>Data</TableHead>
-                <TableHead>Client</TableHead>
-                <TableHead className="text-right">Import</TableHead>
+                <TableHead>Fecha</TableHead>
+                <TableHead>Cliente</TableHead>
+                <TableHead className="text-right">Importe</TableHead>
                 <TableHead className="w-[100px]"></TableHead>
               </TableRow>
             </TableHeader>
@@ -411,15 +411,15 @@ export default function DocumentsPage() {
                 invoices.map(invoice => (
                   <TableRow key={invoice.invoiceNumber}>
                     <TableCell>
-                      {invoice.status.trim().toLowerCase() === 'pagat' ? (
+                      {invoice.status.trim().toLowerCase() === 'pagat' || invoice.status.trim().toLowerCase() === 'pagado' ? (
                         <div className="flex items-center gap-2 font-medium text-green-600">
                           <CheckCircle className="h-5 w-5" />
-                          <span className="hidden sm:inline">Pagat</span>
+                          <span className="hidden sm:inline">Pagado</span>
                         </div>
                       ) : (
                         <div className="flex items-center gap-2 font-medium text-red-600">
                           <XCircle className="h-5 w-5" />
-                          <span className="hidden sm:inline">No pagat</span>
+                          <span className="hidden sm:inline">No pagado</span>
                         </div>
                       )}
                     </TableCell>
@@ -429,7 +429,7 @@ export default function DocumentsPage() {
                     <TableCell className="text-right font-semibold">{invoice.totals.grandTotal.toFixed(2)} €</TableCell>
                     <TableCell className="text-right">
                       <Button variant="outline" size="sm" onClick={() => setSelectedInvoice(invoice)}>
-                        Veure
+                        Ver
                       </Button>
                     </TableCell>
                   </TableRow>
@@ -437,7 +437,7 @@ export default function DocumentsPage() {
               ) : (
                 <TableRow>
                   <TableCell colSpan={6} className="text-center h-24">
-                    No s'han trobat factures.
+                    No se han encontrado facturas.
                   </TableCell>
                 </TableRow>
               )}

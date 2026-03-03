@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/about", label: "Quiénes Somos" },
   { href: "/transport", label: "Transporte" },
   { href: "/tracking", label: "Seguimiento" },
-  { href: "/documents", label: "Documents" },
+  { href: "/documents", label: "Facturas" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contacto" },
   { href: "/login", label: "Login" },
