@@ -49,22 +49,22 @@ export default function DashboardPage() {
 
   const quickActions = [
     {
-      title: "Les meves factures",
-      description: "Consulta i descarrega els teus documents fiscals.",
+      title: "Mis facturas",
+      description: "Consulta y descarga tus documentos fiscales.",
       icon: FileText,
       href: "/documents",
       color: "bg-blue-500/10 text-blue-600",
     },
     {
-      title: "Ofertes exclusives",
-      description: "Descobreix promocions especials per a tu.",
+      title: "Ofertas exclusivas",
+      description: "Descubre promociones especiales para ti.",
       icon: Tag,
       href: "/offers",
       color: "bg-orange-500/10 text-orange-600",
     },
     {
-      title: "Privadesa",
-      description: "Gestiona les teves dades i preferències.",
+      title: "Privacidad",
+      description: "Gestiona tus datos y preferencias de privacidad.",
       icon: ShieldCheck,
       href: "/privacy",
       color: "bg-green-500/10 text-green-600",
@@ -75,12 +75,12 @@ export default function DashboardPage() {
     <div className="container mx-auto max-w-5xl px-4 py-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight">Hola, {userName}! 👋</h1>
-          <p className="text-muted-foreground text-lg mt-1">Benvingut al teu portal d'usuari d'Aventura-Aquí.</p>
+          <h1 className="text-4xl font-bold tracking-tight">¡Hola, {userName}! 👋</h1>
+          <p className="text-muted-foreground text-lg mt-1">Bienvenido a tu portal de usuario de Aventura-Aquí.</p>
         </div>
         <Button onClick={handleLogout} variant="ghost" className="text-destructive hover:bg-destructive/10">
           <LogOut className="mr-2 h-4 w-4" />
-          Tancar Sessió
+          Cerrar Sesión
         </Button>
       </div>
 
@@ -88,7 +88,7 @@ export default function DashboardPage() {
         {/* Card de Información del Usuario */}
         <Card className="md:col-span-1 shadow-md border-primary/10">
           <CardHeader>
-            <CardTitle className="text-xl">El teu perfil</CardTitle>
+            <CardTitle className="text-xl">Tu perfil</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="flex items-center gap-4 p-3 rounded-lg bg-secondary/50">
@@ -96,7 +96,7 @@ export default function DashboardPage() {
                 <User className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Usuari</p>
+                <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Usuario</p>
                 <p className="font-semibold">{userName}</p>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function DashboardPage() {
                     {action.description}
                   </CardDescription>
                   <div className="flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all">
-                    Anar-hi <ArrowRight className="h-4 w-4" />
+                    Ir ahora <ArrowRight className="h-4 w-4" />
                   </div>
                 </CardContent>
               </Card>

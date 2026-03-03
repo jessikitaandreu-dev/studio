@@ -8,38 +8,38 @@ export default function PrivacyPage() {
     <div className="container mx-auto max-w-3xl px-4 py-16">
       <div className="mb-8">
         <Link href="/dashboard" className="flex items-center text-primary font-bold hover:underline mb-8">
-          <ArrowLeft className="mr-2 h-4 w-4" /> Tornar al perfil
+          <ArrowLeft className="mr-2 h-4 w-4" /> Volver al perfil
         </Link>
         <ShieldCheck className="h-16 w-16 text-primary mb-4" />
-        <h1 className="text-4xl font-bold">Política de Privadesa</h1>
-        <p className="text-muted-foreground mt-2 text-lg italic">Darrera actualització: 24 de maig de 2024</p>
+        <h1 className="text-4xl font-bold">Política de Privacidad</h1>
+        <p className="text-muted-foreground mt-2 text-lg italic">Última actualización: 24 de mayo de 2024</p>
       </div>
 
-      <div className="prose prose-lg max-w-none font-body">
-        <p>A <strong>Aventura-Aquí</strong>, la teva privadesa és la nostra prioritat. Ens comprometem a protegir les teves dades personals i a utilitzar-les de manera responsable i transparent.</p>
+      <div className="prose prose-lg max-none font-body">
+        <p>En <strong>Aventura-Aquí</strong>, tu privacidad es nuestra prioridad. Nos comprometemos a proteger tus datos personales y a utilizarlos de manera responsable y transparente.</p>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">1. Recollida de dades</h2>
-        <p>Recollim dades personals només quan és necessari per oferir-te els nostres serveis d'aventura i transport. Això inclou el teu nom, correu electrònic, telèfon i dades d'empresa quan et registres o contractes una excursió.</p>
+        <h2 className="text-2xl font-bold mt-8 mb-4">1. Recogida de datos</h2>
+        <p>Recogemos datos personales solo cuando es necesario para ofrecerte nuestros servicios de aventura y transporte. Esto incluye tu nombre, correo electrónico, teléfono y datos de empresa cuando te registras o contratas una excursión.</p>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">2. Ús de la informació</h2>
-        <p>Utilitzem les teves dades per:</p>
+        <h2 className="text-2xl font-bold mt-8 mb-4">2. Uso de la información</h2>
+        <p>Utilizamos tus datos para:</p>
         <ul>
-          <li>Gestionar les teves reserves i facturació.</li>
-          <li>Realitzar el seguiment dels teus enviaments i serveis contractats.</li>
-          <li>Enviar-te ofertes exclusives (si ens has donat el teu consentiment).</li>
-          <li>Millorar la nostra plataforma web.</li>
+          <li>Gestionar tus reservas y facturación.</li>
+          <li>Realizar el seguimiento de tus envíos y servicios contratados.</li>
+          <li>Enviarte ofertas exclusivas (si nos has dado tu consentimiento).</li>
+          <li>Mejorar nuestra plataforma web.</li>
         </ul>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">3. Seguretat</h2>
-        <p>Implementem mesures de seguretat tècniques i organitzatives per protegir les teves dades contra accessos no autoritzats o pèrdues.</p>
+        <h2 className="text-2xl font-bold mt-8 mb-4">3. Seguridad</h2>
+        <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tus datos contra accesos no autorizados o pérdidas.</p>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">4. Els teus drets</h2>
-        <p>Tens dret a accedir, rectificar o eliminar les teves dades en qualsevol moment. Pots fer-ho directament des del teu perfil o contactant amb nosaltres a <Link href="mailto:privadesa@aventura-aqui.com" className="text-primary hover:underline">privadesa@aventura-aqui.com</Link>.</p>
+        <h2 className="text-2xl font-bold mt-8 mb-4">4. Tus derechos</h2>
+        <p>Tienes derecho a acceder, rectificar o eliminar tus datos en cualquier momento. Puedes hacerlo directamente desde tu perfil o contactando con nosotros en <Link href="mailto:privacidad@aventura-aqui.com" className="text-primary hover:underline">privacidad@aventura-aqui.com</Link>.</p>
       </div>
 
       <div className="mt-12 pt-8 border-t text-center">
         <Button asChild>
-          <Link href="/contact">Tens algun dubte?</Link>
+          <Link href="/contact">¿Tienes alguna duda?</Link>
         </Button>
       </div>
     </div>
